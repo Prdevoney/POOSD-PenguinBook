@@ -40,7 +40,7 @@ Connect to Server with PuTTY:
         Password: POOSD-2024-Spring 
 
 
-To Push Edits to Server: 
+Push Edits to Server: 
 
     1. Connect to the server using PuTTY with IP address and Root Pass. 
 
@@ -52,7 +52,7 @@ To Push Edits to Server:
     4. use command "git pull" 
         This will pull all the edits that we have commited to the project thus far, and automatically update the website. 
 
-To Clone This Repo Locally: 
+Clone This Repo Locally: 
 
     1. Open a new window in VS code 
 
