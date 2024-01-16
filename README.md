@@ -1,10 +1,10 @@
 # POOSD-PenguinBook
 Group project number one for Processes in Object Orientated Software Development
 
-IP address: 159.65.249.52
-Domain name: penguinbook.xyz
-Discord: https://discord.gg/sPbgbKXz
-Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git
+IP address: 159.65.249.52 
+Domain name: penguinbook.xyz 
+Discord: https://discord.gg/sPbgbKXz 
+Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git 
 Roles: 
     Patrick DeVoney: Project Manager 
     Yuto Kikuchi: Data Base 
