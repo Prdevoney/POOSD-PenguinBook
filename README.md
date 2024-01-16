@@ -10,10 +10,15 @@ Discord: https://discord.gg/sPbgbKXz
 Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git 
 
 Roles: 
+
     Patrick DeVoney: Project Manager 
+
     Yuto Kikuchi: Data Base 
+
     Katrina Nicolasora: Front End 
+
     Garrison Scarboro: Front End
+
     John Trucillo: API
 
 Root Pass: POOSD-2024-Spring
