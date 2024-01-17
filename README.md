@@ -13,13 +13,15 @@ Roles:
 
     Patrick DeVoney: Project Manager 
 
-    Yuto Kikuchi: Data Base 
+    Yuto Kikuchi: Data Base, Front End 
 
     Katrina Nicolasora: Front End 
 
     Garrison Scarboro: Front End
 
     John Trucillo: API
+
+    Adrian Hernandez: API 
 
 Root Pass: POOSD-2024-Spring
 
