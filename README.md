@@ -13,7 +13,7 @@ Roles:
 
     Patrick DeVoney: Project Manager 
 
-    Yuto Kikuchi: Data Base 
+    Yuto Kikuchi: Data Base (USER Permission User 'TheBeast' Password POOSD-2024-Spring)
 
     Katrina Nicolasora: Front End 
 
