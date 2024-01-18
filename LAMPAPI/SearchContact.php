@@ -10,8 +10,8 @@ if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
     $stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID = ? AND BINARY Name LIKE ?");
-    $searchPattern = "%" . $name . "%";
-    $stmt->bind_param("is", $userId, $searchPattern);
+    $searchName = "%" . $name . "%";
+    $stmt->bind_param("is", $userId, $searchName);
     $stmt->execute();
     
     $result = $stmt->get_result();
