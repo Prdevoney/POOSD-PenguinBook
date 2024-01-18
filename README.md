@@ -9,6 +9,8 @@ Discord: https://discord.gg/sPbgbKXz
 
 Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git 
 
+Jira: https://penguinbook.atlassian.net/jira/software/projects/PB/boards/1
+
 Root Pass: POOSD-2024-Spring
 
 USER Permission for Database:
