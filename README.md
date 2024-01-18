@@ -25,6 +25,14 @@ Roles:
 
 Root Pass: POOSD-2024-Spring
 
+Git Commits Show in Jira (this is totally optional, just thought it would be good to learn): 
+
+    1. When commiting a change write at the begining of the commit message: "PB-x" 
+        1.1. Where x is the number of the task in Jira. 
+        1.2. The task number will be next to the blue checkmark on the task icon. 
+
+    2. Now you can go to Jira, click on the task you were working on, and see the commit that you just made that relates to that task. 
+
 Connect to Server with PuTTY: 
 
     1. Install PuTTY for Windows from: https://the.earth.li/~sgtatham/putty/0.80/w64/putty-64bit-0.80-installer.msi
