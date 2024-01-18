@@ -31,7 +31,8 @@ Git Commits Show in Jira (this is totally optional, just thought it would be goo
         1.1. Where x is the number of the task in Jira. 
         1.2. The task number will be next to the blue checkmark on the task icon. 
 
-    2. Now you can go to Jira, click on the task you were working on, and see the commit that you just made that relates to that task. 
+    2. Now you can go to Jira, click on the task you were working on, and see the commit 
+       that you just made that relates to that task. 
 
 Connect to Server with PuTTY: 
 
