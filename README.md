@@ -40,7 +40,7 @@ Push Edits to Server:
     3.  Use command: cd /var/www/html 
 
     4. use command "git pull" 
-        This will pull all the edits that we have commited to the project thus far, and automatically update the website. 
+        This will pull all the edits that we have pushed to the project thus far, and automatically update the website. 
 
 Git Commits Show in Jira (this is totally optional, just thought it would be good to learn): 
 
