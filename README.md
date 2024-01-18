@@ -12,8 +12,9 @@ Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git
 Root Pass: POOSD-2024-Spring
 
 USER Permission for Database:
-    \nUser: 'TheBeast' 
-    \nPassword: 'POOSD-2024-Spring'
+    
+    User: 'TheBeast' 
+    Password: 'POOSD-2024-Spring'
 
 Roles: 
 
