@@ -9,11 +9,17 @@ Discord: https://discord.gg/sPbgbKXz
 
 Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git 
 
+Root Pass: POOSD-2024-Spring
+
+USER Permission for Database:
+    User: 'TheBeast' 
+    Password: 'POOSD-2024-Spring'
+
 Roles: 
 
     Patrick DeVoney: Project Manager 
 
-    Yuto Kikuchi: Data Base (USER Permission User 'TheBeast' Password POOSD-2024-Spring), Front End
+    Yuto Kikuchi: Data Base, Front End
 
     Katrina Nicolasora: Front End 
 
@@ -23,7 +29,17 @@ Roles:
 
     Adrian Hernandez: API 
 
-Root Pass: POOSD-2024-Spring
+Push Edits to Server: 
+
+    1. Connect to the server using PuTTY with IP address and Root Pass. 
+
+    2. Username: root
+       Password: POOSD-2024-Spring 
+
+    3.  Use command: cd /var/www/html 
+
+    4. use command "git pull" 
+        This will pull all the edits that we have commited to the project thus far, and automatically update the website. 
 
 Git Commits Show in Jira (this is totally optional, just thought it would be good to learn): 
 
@@ -49,19 +65,6 @@ Connect to Server with PuTTY:
     5. Login with: 
         Username: root 
         Password: POOSD-2024-Spring 
-
-
-Push Edits to Server: 
-
-    1. Connect to the server using PuTTY with IP address and Root Pass. 
-
-    2. Username: root
-       Password: POOSD-2024-Spring 
-
-    3.  Use command: cd /var/www/html 
-
-    4. use command "git pull" 
-        This will pull all the edits that we have commited to the project thus far, and automatically update the website. 
 
 Clone This Repo Locally: 
 
