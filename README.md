@@ -11,11 +11,20 @@ Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git
 
 Leineckers Example: http://4331paradise.com/ 
 
+Jira: https://penguinbook.atlassian.net/jira/software/projects/PB/boards/1
+
+Root Pass: POOSD-2024-Spring
+
+USER Permission for Database:
+    
+    User: 'TheBeast' 
+    Password: 'POOSD-2024-Spring'
+
 Roles: 
 
     Patrick DeVoney: Project Manager 
 
-    Yuto Kikuchi: Data Base (USER Permission User 'TheBeast' Password POOSD-2024-Spring), Front End
+    Yuto Kikuchi: Data Base, Front End
 
     Katrina Nicolasora: Front End 
 
@@ -25,7 +34,26 @@ Roles:
 
     Adrian Hernandez: API 
 
-Root Pass: POOSD-2024-Spring
+Push Edits to Server: 
+
+    1. Connect to the server using PuTTY with IP address and Root Pass. 
+
+    2. Username: root
+       Password: POOSD-2024-Spring 
+
+    3.  Use command: cd /var/www/html 
+
+    4. use command "git pull" 
+        This will pull all the edits that we have pushed to the project thus far, and automatically update the website. 
+
+Git Commits Show in Jira (this is totally optional, just thought it would be good to learn): 
+
+    1. When commiting a change write at the begining of the commit message: "PB-x" 
+        1.1. Where x is the number of the task in Jira. 
+        1.2. The task number will be next to the blue checkmark on the task icon. 
+
+    2. Now you can go to Jira, click on the task you were working on, and see the commit 
+       that you just made that relates to that task. 
 
 Connect to Server with PuTTY: 
 
@@ -42,19 +70,6 @@ Connect to Server with PuTTY:
     5. Login with: 
         Username: root 
         Password: POOSD-2024-Spring 
-
-
-Push Edits to Server: 
-
-    1. Connect to the server using PuTTY with IP address and Root Pass. 
-
-    2. Username: root
-       Password: POOSD-2024-Spring 
-
-    3.  Use command: cd /var/www/html 
-
-    4. use command "git pull" 
-        This will pull all the edits that we have commited to the project thus far, and automatically update the website. 
 
 Clone This Repo Locally: 
 
