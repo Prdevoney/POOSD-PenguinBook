@@ -11,6 +11,8 @@ Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git
 
 Jira: https://penguinbook.atlassian.net/jira/software/projects/PB/boards/1
 
+Sample: https://github.com/Paradise-Pages/COP4331-Group6.git
+
 Root Pass: POOSD-2024-Spring
 
 USER Permission for Database:
