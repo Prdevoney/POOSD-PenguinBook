@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Penguin Book</title>
+    <script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
-
 
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -26,35 +27,36 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
                         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                      </svg>
+                    </svg>
                 </button>
                 
                 <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="ModalLabel1">Login</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header text-center">
+                                <h1 class="modal-title fs-5 w-100" id="ModalLabel1">Login</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                                <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
+                            <div class="modal-body">
+
+                                <div class="mb-3 container">
+                                    <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                                    <input class="form-control" id="loginName" type="text" placeholder="User Name" aria-label="default input example">
+                                </div>
+
+                                <div class="mb-3 container">
+                                    <label for="inputPassword5" class="form-label">Password</label>
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                                </div>
+
+                                <button type="button" id="loginButton" class="btn btn-primary container" onclick="doLogin();">Login</button>
+
                             </div>
-                            <div class="mb-3">
-                                <label for="inputPassword5" class="form-label">Password</label>
-                                <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
-                            </div>
+
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
 
@@ -64,39 +66,40 @@
                 
                 <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="ModalLabel2">Sign Up</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">First & Last Name</label>
-                                <input class="form-control mb-1" type="text" placeholder="First Name" aria-label="default input example">
-                                <input class="form-control" type="text" placeholder="Last Name" aria-label="default input example">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="ModalLabel2">Sign Up</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">First & Last Name</label>
+                                    <input class="form-control mb-1" type="text" placeholder="First Name" aria-label="default input example">
+                                    <input class="form-control" type="text" placeholder="Last Name" aria-label="default input example">
+                                </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                            </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                                <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
-                            </div>
-                            <div class="mb-3">
-                                <label for="inputPassword5" class="form-label">Password</label>
-                                <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
-                                <div id="passwordHelpBlock" class="form-text">
-                                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                                    <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="inputPassword5" class="form-label">Password</label>
+                                    <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                                    <div id="passwordHelpBlock" class="form-text">
+                                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                                    </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -110,6 +113,10 @@
             <h5 class="mt-3">Your one stop shop for contact management</h5>
             <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
                 Login
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg>
             </button>
         </div>
     </div>
@@ -126,6 +133,5 @@
         </div>
     </footer>
    
-
   </body>
 </html>
