@@ -27,30 +27,39 @@
                 
                 <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="ModalLabel1">My Account</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="myEmail@gmail.com">
+                        <div class="modal-content">
+                            <div class="modal-header container justify-content-center">
+                                <h1 class="modal-title fs-5" id="ModalLabel1">My Account</h1>
                             </div>
+                            <div class="modal-body">
+                                <div class="container d-flex">
+                                    <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
+                                    <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                                </div>
+                                <div class="mb-3 container d-flex justify-contenent-between">
+                                    <input class="form-control me-1" type="text" placeholder="Get First Name" aria-label="default input example" disabled readonly>
+                                    <input class="form-control" type="text" placeholder="Get Last Name" aria-label="default input example" disabled readonly>
+                                </div>
+                                <div class="mb-3 container">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Get Email Account" disabled readonly>
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                                <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
+                                <div class="mb-3 container">
+                                    <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                                    <input class="form-control" type="text" placeholder="Get User Name" aria-label="default input example" disabled readonly>
+                                </div>
+                                <div class="mb-3 container">
+                                    <label for="inputPassword5" class="form-label">Password</label>
+                                    <input type="password" id="inputPassword5" class="form-control" placeholder="Get Password" aria-describedby="passwordHelpBlock" disabled readonly>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="inputPassword5" class="form-label">Password</label>
-                                <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete Account</button>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Edit Account</button>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal2">
@@ -58,16 +67,117 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
                         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                      </svg>
+                    </svg>
                 </button>
             </div>
             
         </div>
     </nav>
-
+    
+    <div class="container my-5 justify-content-center">
+        <form class="d-flex col-6 offset-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">
+                Search
+            </button>
+        </form>
+    </div>
+        
+    <div class="container">
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></li>
+            <li class="list-group-item col-3">
+                First Name
+            </li>
+            <li class="list-group-item col-3">
+                Last Name
+            </li>
+            <li class="list-group-item col-3">
+                Phone Number
+            </li>
+            <li class="list-group-item col-3">
+                Email
+            </li>
+        </ul>
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></li>
+            <li class="list-group-item col-3">
+                First Name
+            </li>
+            <li class="list-group-item col-3">
+                Last Name
+            </li>
+            <li class="list-group-item col-3">
+                Phone Number
+            </li>
+            <li class="list-group-item col-3">
+                Email
+            </li>
+        </ul>
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></li>
+            <li class="list-group-item col-3">
+                First Name
+            </li>
+            <li class="list-group-item col-3">
+                Last Name
+            </li>
+            <li class="list-group-item col-3">
+                Phone Number
+            </li>
+            <li class="list-group-item col-3">
+                Email
+            </li>
+        </ul>
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></li>
+            <li class="list-group-item col-3">
+                First Name
+            </li>
+            <li class="list-group-item col-3">
+                Last Name
+            </li>
+            <li class="list-group-item col-3">
+                Phone Number
+            </li>
+            <li class="list-group-item col-3">
+                Email
+            </li>
+        </ul>
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></li>
+            <li class="list-group-item col-3">
+                First Name
+            </li>
+            <li class="list-group-item col-3">
+                Last Name
+            </li>
+            <li class="list-group-item col-3">
+                Phone Number
+            </li>
+            <li class="list-group-item col-3">
+                Email
+            </li>
+        </ul>
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></li>
+            <li class="list-group-item col-3">
+                First Name
+            </li>
+            <li class="list-group-item col-3">
+                Last Name
+            </li>
+            <li class="list-group-item col-3">
+                Phone Number
+            </li>
+            <li class="list-group-item col-3">
+                Email
+            </li>
+        </ul>
+        
+    </div>
     
 
-    
     <footer class="bg-dark text-white mt-4">
         <div class="container text-center py-3">
             <p>Follow us on GitHub:</p>
@@ -80,6 +190,5 @@
         </div>
     </footer>
    
-
   </body>
 </html>
