@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container d-flex justify-contenent-between">
           <a class="navbar-brand" href="#">
             <img src="./images/images.jpg" alt="PenguinBook" width="35" height="40">
@@ -30,85 +30,89 @@
                     </svg>
                 </button>
                 
-                <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header text-center">
-                                <h1 class="modal-title fs-5 w-100" id="ModalLabel1">Login</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-
-                            <div class="modal-body">
-
-                                <div class="mb-3 container">
-                                    <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                                    <input class="form-control" id="loginName" type="text" placeholder="User Name" aria-label="default input example">
-                                </div>
-
-                                <div class="mb-3 container">
-                                    <label for="inputPassword5" class="form-label">Password</label>
-                                    <input type="password" id="loginPassword" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
-                                </div>
-
-                                <button type="button" id="loginButton" class="btn btn-primary container" onclick="doLogin();">Login</button>
-
-                                <span id="loginResult"></span>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                
 
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal2">
                     Sign Up
                 </button>
                 
-                <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="ModalLabel2">Sign Up</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">First & Last Name</label>
-                                    <input class="form-control mb-1" type="text" placeholder="First Name" aria-label="default input example">
-                                    <input class="form-control" type="text" placeholder="Last Name" aria-label="default input example">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                                    <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="inputPassword5" class="form-label">Password</label>
-                                    <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
-                                    <div id="passwordHelpBlock" class="form-text">
-                                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </nav>
 
-    <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h1 class="modal-title fs-5 w-100" id="ModalLabel1">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="mb-3 container">
+                        <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                        <input class="form-control" id="loginName" type="text" placeholder="User Name" aria-label="default input example">
+                    </div>
+
+                    <div class="mb-3 container">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                    </div>
+
+                    <button type="button" id="loginButton" class="btn btn-primary container" onclick="doLogin();">Login</button>
+
+                    <span id="loginResult"></span>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ModalLabel2">Sign Up</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">First & Last Name</label>
+                        <input class="form-control mb-1" type="text" placeholder="First Name" aria-label="default input example">
+                        <input class="form-control" type="text" placeholder="Last Name" aria-label="default input example">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                        <input class="form-control" type="text" placeholder="User Name" aria-label="default input example">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                        <div id="passwordHelpBlock" class="form-text">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="text-center">
             <h1>Welcome to</h1>
             <h1>Penguin Book</h1>
@@ -123,14 +127,14 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-white mt-4">
-        <div class="container text-center py-3">
-            <p>Follow us on GitHub:</p>
-            <a href="https://github.com/yourusername" class="text-white">
+    <footer class="bg-dark text-white mt-4 fixed-bottom">
+        <div class="container text-center mt-1 mb-2">
+            Follow us on GitHub: </br>
+            <a href="https://github.com/Prdevoney/POOSD-PenguinBook.git" class="text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
                 </svg> 
-                GitHub
+                Penguin Book
             </a>
         </div>
     </footer>
