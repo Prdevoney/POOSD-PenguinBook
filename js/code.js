@@ -1,4 +1,4 @@
-const urlBase = 'hello';
+const urlBase = 'http://penguinbook.xyz/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
