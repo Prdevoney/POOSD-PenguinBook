@@ -116,7 +116,13 @@ function addContact()
 
     document.getElementById("contactAddResult").innerHTML = "";
 
-    let tmp = {contact:newContact,userId,userId};
+    let tmp = {
+		firstName:first,
+		lastName:last,
+		email:email,
+		phone:phone,
+		userId:userId
+	};
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/AddContact.' + extension;
