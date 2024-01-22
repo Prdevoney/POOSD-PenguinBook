@@ -135,8 +135,6 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	
-
 }
 
 function searchContact()

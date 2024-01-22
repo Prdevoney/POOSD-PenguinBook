@@ -29,7 +29,7 @@
             My Account
         </button>
 
-        <button type="button" class="btn btn-primary" onclick="doLogout();" data-bs-toggle="modal" data-bs-target="#Modal2">
+        <button type="button" class="btn btn-primary" onclick="doLogout();">
             Logout
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
@@ -98,189 +98,54 @@
         </div>
 
         <div class="container d-flex justify-content-center mb-3">
-            <button class="btn btn-outline-primary">Add Contact</button>
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal2">Add Contact</button>
             <button class="btn btn-outline-primary mx-1">Delete Contact</button>
             <button class="btn btn-outline-primary">Edit Contact</button>
         </div>
-        </div>
 
-        <div class=" container" style="border-bottom: 1px solid #e5e5e5">
-            <ul class="list-group container list-group-horizontal d-flex justify-content-center">
-                <li class="list-group-item py-2" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled>
-                </li>
-                <li class="list-group-item py-2" style="width: 225px">
-                    First Name
-                </li>
-                <li class="list-group-item py-2" style="width: 225px">
-                    Last Name
-                </li>
-                <li class="list-group-item py-2" style="width: 225px">
-                    Phone Number
-                </li>
-                <li class="list-group-item py-2" style="width: 225px">
-                    Email
-                </li>
-            </ul>
-        </div>
+    </div>
 
-        <div class="overflow-auto" style="height: 440px;">
-            
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
-                <li class="list-group-item" style="width: 50px">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Jerry
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    Maguire
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    407-555-9174
-                </li>
-                <li class="list-group-item" style="width: 225px">
-                    jmag@gmail.com
-                </li>
-            </ul>
-            
-        </div>
+    <div class=" container" style="border-bottom: 1px solid #e5e5e5">
+        <ul class="list-group container list-group-horizontal d-flex justify-content-center">
+            <li class="list-group-item py-2" style="width: 50px">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled>
+            </li>
+            <li class="list-group-item py-2" style="width: 225px">
+                First Name
+            </li>
+            <li class="list-group-item py-2" style="width: 225px">
+                Last Name
+            </li>
+            <li class="list-group-item py-2" style="width: 225px">
+                Phone Number
+            </li>
+            <li class="list-group-item py-2" style="width: 225px">
+                Email
+            </li>
+        </ul>
+    </div>
+
+    <div class="overflow-auto" style="height: 440px;">
+        
+        <ul class="list-group list-group-horizontal mb-3 d-flex justify-content-center">
+            <li class="list-group-item" style="width: 50px">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            </li>
+            <li class="list-group-item" style="width: 225px">
+                Jerry
+            </li>
+            <li class="list-group-item" style="width: 225px">
+                Maguire
+            </li>
+            <li class="list-group-item" style="width: 225px">
+                407-555-9174
+            </li>
+            <li class="list-group-item" style="width: 225px">
+                jmag@gmail.com
+            </li>
+        </ul>
+        
+    </div>
 
     </div>
 
