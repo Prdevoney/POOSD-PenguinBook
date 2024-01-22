@@ -186,7 +186,28 @@ function searchContact()
 
 function updateContact()
 {
-
+    let firstName = document.getElementbyId("firstName").value;
+    let lastName = document.getElementbyId("lastName").value;
+    let phone = document.getElementbyId("phone").value;
+    let email = document.getElementbyId("email").value;
+    
+    document.getElementById("editError").innerHTML = "";
+    
+    const [status, responseJson] = await putData(
+        window.urlBase + '/contacts/UpdateContact' + window.extension,
+        {
+            
+            firstName:firstName,
+            lastName:lastName,
+            email:email, 
+            phone:phone,
+        });
+    
+    if (this.status == 200){
+        localStorage.setItem("contactUpdateResult", JSON.stringify(responseJson.data));
+    } else {
+       // document.getElementById
+    }	
 }
 
 function register() 
