@@ -109,7 +109,11 @@ function doLogout()
 
 function addContact()
 {
-    let newContact = document.getElementById("contactText").value;
+    let first = document.getElementById("firstName").value;
+    let last = document.getElementById("lastName").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phoneNumber").value;
+
     document.getElementById("contactAddResult").innerHTML = "";
 
     let tmp = {contact:newContact,userId,userId};
@@ -182,7 +186,7 @@ function searchContact()
 	
 }
 
-function updateContact()
+async function updateContact()
 {
     let firstName = document.getElementbyId("firstName").value;
     let lastName = document.getElementbyId("lastName").value;
@@ -194,7 +198,6 @@ function updateContact()
     const [status, responseJson] = await putData(
         window.urlBase + '/contacts/UpdateContact' + window.extension,
         {
-            
             firstName:firstName,
             lastName:lastName,
             email:email, 

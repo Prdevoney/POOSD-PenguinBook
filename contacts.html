@@ -103,6 +103,46 @@
             <button class="btn btn-outline-primary">Edit Contact</button>
         </div>
 
+
+        <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+    
+                    <div class="modal-header container justify-content-center">
+                        <h1 class="modal-title fs-5" id="ModalLabel1">Add Contact</h1>
+                    </div>
+    
+                    <div class="modal-body">
+    
+                        <div class="container d-flex">
+                            <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
+                            <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                        </div>
+    
+                        <div class="mb-3 container d-flex justify-contenent-between">
+                            <input class="form-control me-1" type="text" placeholder="Get First Name" aria-label="default input example" >
+                            <input class="form-control" type="text" placeholder="Get Last Name" aria-label="default input example" >
+                        </div>
+    
+                        <div class="mb-3 container">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Get Email Account" >
+                        </div>
+    
+                        <div class="mb-3 container">
+                            <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                            <input class="form-control" type="text" placeholder="Get User Name" aria-label="default input example" >
+                        </div>
+    
+                        <button type="button" id="contactText" class="btn btn-primary container" onclick="addContact();">Add Contact</button>
+
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <div class=" container" style="border-bottom: 1px solid #e5e5e5">
