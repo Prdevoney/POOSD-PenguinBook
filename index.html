@@ -139,18 +139,26 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('background-container'); // set in css to be a particular iceberg pic
-            const numberOfImages = 50; // set this to number of users, contacts, etc.
-            const imagePath = './images/backgroundPenguin.jpg'; // we can add more different penguins and pick randomly
+            const numberOfImages = 100; // set this to number of users, contacts, etc.
+            const placedImages = []; // Array to store the positions and sizes of the images
 
             for (let i = 0; i < numberOfImages; i++) {
+                // Choose a random penguin picture 1-15
+                const randomNumber = Math.floor(Math.random() * 15) + 1;
+                const imagePath = `./images/p${randomNumber}.png`;
+
                 const img = document.createElement('img');
                 img.src = imagePath;
                 img.classList.add('overlay-image')
                 if (i % 2 == 0) img.classList.add('img-hor') // Face half of them the other way
 
-                maxWidth = 50;
-                minWidth = 35;
+                maxWidth = 45;
+                minWidth = 25;
                 img.width = Math.random() * (maxWidth - minWidth) + minWidth; // could do the same with height for more variation
+
+                maxHeight = 65;
+                minHeight = 40;
+                img.height = Math.random() * (maxHeight - minHeight) + minHeight; // could do the same with height for more variation
 
                 const maxX = container.offsetWidth - img.offsetWidth;
                 const maxY = (container.offsetHeight - img.offsetHeight);
