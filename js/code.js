@@ -183,3 +183,18 @@ function searchContact()
 	}
 	
 }
+
+function updateContact()
+{
+
+}
+
+function register() 
+{
+
+}
+
+function deleteContact()
+{
+
+}
