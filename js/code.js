@@ -109,10 +109,20 @@ function doLogout()
 
 function addContact()
 {
-    let newContact = document.getElementById("contactText").value;
+    let first = document.getElementById("firstName").value;
+    let last = document.getElementById("lastName").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phoneNumber").value;
+
     document.getElementById("contactAddResult").innerHTML = "";
 
-    let tmp = {contact:newContact,userId,userId};
+    let tmp = {
+		firstName:first,
+		lastName:last,
+		email:email,
+		phone:phone,
+		userId:userId
+	};
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/AddContact.' + extension;
@@ -135,8 +145,6 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	
-
 }
 
 function searchContact()
@@ -182,4 +190,39 @@ function searchContact()
 		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
 	
+}
+
+async function updateContact()
+{
+    let firstName = document.getElementbyId("firstName").value;
+    let lastName = document.getElementbyId("lastName").value;
+    let phone = document.getElementbyId("phone").value;
+    let email = document.getElementbyId("email").value;
+    
+    document.getElementById("editError").innerHTML = "";
+    
+    const [status, responseJson] = await putData(
+        window.urlBase + '/contacts/UpdateContact' + window.extension,
+        {
+            firstName:firstName,
+            lastName:lastName,
+            email:email, 
+            phone:phone,
+        });
+    
+    if (this.status == 200){
+        localStorage.setItem("contactUpdateResult", JSON.stringify(responseJson.data));
+    } else {
+       // document.getElementById
+    }	
+}
+
+function register() 
+{
+
+}
+
+function deleteContact()
+{
+
 }
