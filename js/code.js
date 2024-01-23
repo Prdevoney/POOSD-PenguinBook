@@ -217,9 +217,48 @@ async function updateContact()
     }	
 }
 
-function register() 
+function register()
 {
 
+	let login = document.getElementById("userName").value;
+    let password = document.getElementById("newPassword").value;
+	let firstName = document.getElementById("first").value;
+	let lastName = document.getElementById("last").value;
+	//let email = document.getElementById("newEmail").value;
+
+	let url = urlBase + '/Register.' + extension;
+
+	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+				login = jsonObject.login;
+				password = jsonObject.password;
+
+				saveCookie();
+	
+				window.location.href = "contacts.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
 }
 
 function deleteContact()
