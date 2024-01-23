@@ -122,7 +122,7 @@ function addContact()
 		lastName:last,
 		email:email,
 		phone:phone,
-		userId:userId
+		userId,userId
 	};
     let jsonPayload = JSON.stringify(tmp);
 
