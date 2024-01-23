@@ -113,7 +113,6 @@ function addContact()
     let last = document.getElementById("lastName").value;
     let phone = document.getElementById("phoneNumber").value;
     let email = document.getElementById("email").value;
-	let userId = 2; 
 
     document.getElementById("contactAddResult").innerHTML = "";
 
@@ -122,7 +121,7 @@ function addContact()
 		lastName:last,
 		phone:phone,
 		email:email,
-		userId:userId
+		userId,userId
 	};
     let jsonPayload = JSON.stringify(tmp);
 
