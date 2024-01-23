@@ -111,18 +111,18 @@ function addContact()
 {
     let first = document.getElementById("firstName").value;
     let last = document.getElementById("lastName").value;
-    let email = document.getElementById("email").value;
     let phone = document.getElementById("phoneNumber").value;
-	let userId = "2"; 
+    let email = document.getElementById("email").value;
+	let userId = 2; 
 
     document.getElementById("contactAddResult").innerHTML = "";
 
     let tmp = {
 		firstName:first,
 		lastName:last,
-		email:email,
 		phone:phone,
-		userId:userId
+		email:email,
+		userId,userId
 	};
     let jsonPayload = JSON.stringify(tmp);
 
