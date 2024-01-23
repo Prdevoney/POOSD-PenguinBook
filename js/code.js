@@ -1,4 +1,4 @@
-const urlBase = 'penguinbook.xyz/LAMPAPI';
+const urlBase = 'http://penguinbook.xyz/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -46,7 +46,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -109,10 +109,20 @@ function doLogout()
 
 function addContact()
 {
-    let newContact = document.getElementById("contactText").value;
+    let first = document.getElementById("firstName").value;
+    let last = document.getElementById("lastName").value;
+    let phone = document.getElementById("phoneNumber").value;
+    let email = document.getElementById("email").value;
+
     document.getElementById("contactAddResult").innerHTML = "";
 
-    let tmp = {contact:newContact,userId,userId};
+    let tmp = {
+		firstName:first,
+		lastName:last,
+		phone:phone,
+		email:email,
+		userId:userId
+	};
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/AddContact.' + extension;
@@ -135,8 +145,6 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	
-
 }
 
 function searchContact()
@@ -182,4 +190,78 @@ function searchContact()
 		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
 	
+}
+
+async function updateContact()
+{
+    let firstName = document.getElementbyId("firstName").value;
+    let lastName = document.getElementbyId("lastName").value;
+    let phone = document.getElementbyId("phone").value;
+    let email = document.getElementbyId("email").value;
+    
+    document.getElementById("editError").innerHTML = "";
+    
+    const [status, responseJson] = await putData(
+        window.urlBase + '/contacts/UpdateContact' + window.extension,
+        {
+            firstName:firstName,
+            lastName:lastName,
+            email:email, 
+            phone:phone,
+        });
+    
+    if (this.status == 200){
+        localStorage.setItem("contactUpdateResult", JSON.stringify(responseJson.data));
+    } else {
+       // document.getElementById
+    }	
+}
+
+function register()
+{
+
+	let login = document.getElementById("userName").value;
+    let password = document.getElementById("newPassword").value;
+	let firstName = document.getElementById("first").value;
+	let lastName = document.getElementById("last").value;
+	//let email = document.getElementById("newEmail").value;
+
+	let url = urlBase + '/Register.' + extension;
+
+	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+				login = jsonObject.login;
+				password = jsonObject.password;
+
+				saveCookie();
+	
+				window.location.href = "contacts.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
+}
+
+function deleteContact()
+{
+
 }

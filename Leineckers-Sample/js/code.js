@@ -10,15 +10,15 @@ function doLogin()
 	userId = 0;
 	firstName = "";
 	lastName = "";
-	
+
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-//	var hash = md5( password );
+	//	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
 	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+	//	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -45,8 +45,10 @@ function doLogin()
 				lastName = jsonObject.lastName;
 
 				saveCookie();
-	
-				window.location.href = "color.html";
+
+				// window.location.href = "color.html";
+				window.location.href = "contacts.html";
+
 			}
 		};
 		xhr.send(jsonPayload);
@@ -62,7 +64,7 @@ function saveCookie()
 {
 	let minutes = 20;
 	let date = new Date();
-	date.setTime(date.getTime()+(minutes*60*1000));	
+	date.setTime(date.getTime()+(minutes*60*1000));
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
 

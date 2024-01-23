@@ -11,6 +11,8 @@ Git Hub: https://github.com/Prdevoney/POOSD-PenguinBook.git
 
 Jira: https://penguinbook.atlassian.net/jira/software/projects/PB/boards/1
 
+Sample: https://github.com/Paradise-Pages/COP4331-Group6.git
+
 Root Pass: POOSD-2024-Spring
 
 USER Permission for Database:
@@ -42,7 +44,10 @@ Push Edits to Server:
     3.  Use command: cd /var/www/html 
 
     4. use command "git pull" 
-        This will pull all the edits that we have pushed to the project thus far, and automatically update the website. 
+        This will pull all the edits that we have pushed to the project thus far, and automatically update the website.
+
+    5. If it is telling you that there is a conflict and you just want to make the code on the server exactly the same
+       as the git repo then use command: "git reset --hard origin/main"
 
 Git Commits Show in Jira (this is totally optional, just thought it would be good to learn): 
 

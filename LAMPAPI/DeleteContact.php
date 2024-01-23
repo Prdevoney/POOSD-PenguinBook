@@ -2,15 +2,16 @@
 $inData = getRequestInfo();
 
 $userId = $inData["userId"];
-$name = $inData["name"];
+$firstName = $inData["firstName"];
+$lastName = $inData["lastName"];
 
 $conn = new mysqli("localhost", "TheBeast", "POOSD-2024-Spring", "COP4331");
 
 if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
-    $stmt = $conn->prepare("DELETE FROM Contacts WHERE UserID = ? AND BINARY Name = ?");
-    $stmt->bind_param("is", $userId, $name);
+    $stmt = $conn->prepare("DELETE FROM Contacts WHERE UserID = ? AND BINARY FirstName = ? AND BINARY LastName = ?");
+    $stmt->bind_param("iss", $userId, $firstName, $lastName);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {

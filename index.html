@@ -1,41 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Penguin Book</title>
+    <script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css"/>
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body>
-    <!--- Headings -->
-    <h1>Penguin Book</h1>
 
-
-
-
-    <!-- -->
-
-<div
-  class="bg-image"
-  style="
-    background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');
-    height: 100vh;
-  "
-></div>
-
-
-
-    <!-- Text and Font -->
-
-
-
-    <h1 id ="title">Penguin Book</h1>
-    <button type="button" id="loginPageButton" onclick="location.href = 'loginPage.html';">Login</button>
-    <button type="button" id="registerPageButton" onclick="location.href = 'registerPage.html';">Register</button>
-
+  <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     
-</body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container d-flex justify-contenent-between">
+          <a class="navbar-brand" href="#">
+            <img src="./images/images.jpg" alt="PenguinBook" width="35" height="40">
+            Penguin Book
+          </a>
+            <div>
+                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
+                    Login
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                </button>
 
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal2">
+                    Sign Up
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h1 class="modal-title fs-5 w-100" id="ModalLabel1">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="mb-3 container">
+                        <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                        <input class="form-control" id="loginName" type="text" placeholder="User Name" aria-label="default input example">
+                    </div>
+
+                    <div class="mb-3 container">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                    </div>
+
+                    <button type="button" id="loginButton" class="btn btn-primary container" onclick="doLogin();">Login</button>
+
+                    <span id="loginResult"></span>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header text-center">
+                    <h1 class="modal-title fs-5 w-100" id="ModalLabel2">Sign Up</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="container d-flex">
+                        <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
+                        <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                    </div>
+
+                    <div class="mb-3 container d-flex justify-contenent-between">
+                        <input id="first" class="form-control me-1" type="text" placeholder="First Name" aria-label="default input example">
+                        <input id="last" class="form-control" type="text" placeholder="Last Name" aria-label="default input example">
+                    </div>
+
+                    <div class="mb-3 container">
+                        <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                        <input id="userName" class="form-control" type="text" placeholder="User Name" aria-label="default input example">
+                    </div>
+
+                    <div class="mb-3 container">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="newEmail" placeholder="name@example.com">
+                    </div>
+
+                    <div class="mb-1 container">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input type="password" id="inputPassword5" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                        <div id="passwordHelpBlock" class="form-text">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 container">
+                        <label for="inputPassword5" class="form-label"> Confirm Password</label>
+                        <input type="password" id="newPassword" class="form-control" placeholder="Password" aria-describedby="passwordHelpBlock">
+                    </div>
+
+                    <button type="button" id="registerButton" class="btn btn-primary container" onclick="">Sign Up</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="background-container" class="background-container d-flex justify-content-center align-items-center" style="height: 150vh;">
+        <div class="text-center" style="z-index: 10; text-shadow: 2px 2px 4px rgba(20, 100, 120, .75);">
+            <h1>Welcome to Penguin Book</h1>
+            <h5 class="mt-3">Your one stop shop for contact management</h5>
+            <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
+                Login
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+     <script>
+        /*document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('background-container'); // set in css to be a particular iceberg pic
+            const numberOfImages = 100; // set this to number of users, contacts, etc.
+            const placedImages = []; // Array to store the positions and sizes of the images
+            for (let i = 0; i < numberOfImages; i++) {
+                // Choose a random penguin picture 1-15
+                const randomNumber = Math.floor(Math.random() * 15) + 1;
+                const imagePath = `./images/bgPenguins/p${randomNumber}.png`;
+
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.classList.add('overlay-image')
+                if (i % 2 == 0) img.classList.add('img-hor') // Face half of them the other way
+
+                const maxX = container.offsetWidth - img.offsetWidth;
+                const maxY = (container.offsetHeight - img.offsetHeight);
+                const minY = maxY * .5; // higher value -> lower position penguins
+                const minX = maxX * .1;
+
+                // Generate a random position within the boundary
+                const x = Math.random() * maxX * .75 + minX;
+                const y = Math.random() * maxY * .3 + minY; // lower multiple -> less spread
+
+                const perspectiveMultiplier = (y / maxY); // penguins are smaller the further up they are
+
+                maxWidth = 45 * perspectiveMultiplier;
+                minWidth = 35 * perspectiveMultiplier;
+                img.width = Math.random() * (maxWidth - minWidth) + minWidth;
+
+                maxHeight = 60 * perspectiveMultiplier;
+                minHeight = 40 * perspectiveMultiplier;
+                img.height = Math.random() * (maxHeight - minHeight) + minHeight;
+
+                img.style.left = x + 'px';
+                img.style.top = y + 'px';
+
+                var degrees = Math.random() * 30 - 15;
+                img.style.transform = 'rotate(' + degrees + 'deg)';
+
+                container.appendChild(img);
+            }
+        });*/
+    </script>
+
+    <footer class="bg-dark text-white mt-4 fixed-bottom">
+        <div class="container text-center mt-1 mb-2">
+            Follow us on GitHub: </br>
+            <a href="https://github.com/Prdevoney/POOSD-PenguinBook.git" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg> 
+                Penguin Book
+            </a>
+        </div>
+    </footer>
+   
+  </body>
 </html>
