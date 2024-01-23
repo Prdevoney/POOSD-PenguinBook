@@ -113,7 +113,7 @@ function addContact()
     let last = document.getElementById("lastName").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phoneNumber").value;
-	let userId = 2; 
+	let userId = "2"; 
 
     document.getElementById("contactAddResult").innerHTML = "";
 
