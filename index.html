@@ -8,7 +8,8 @@
     <script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
 
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -21,14 +22,6 @@
             <img src="./images/images.jpg" alt="PenguinBook" width="35" height="40">
             Penguin Book
           </a>
-          <style>
-            body {
-              background-image: url('./images/arctic2.jpg');
-              background-size: cover;
-              background-position: center;
-              background-attachment: fixed;
-            }
-          </style>
             <div>
                 <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
                     Login
@@ -130,10 +123,9 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="text-center">
-            <h1>Welcome to</h1>
-            <h1>Penguin Book</h1>
+    <div id="background-container" class="background-container d-flex justify-content-center align-items-center" style="height: 150vh;">
+        <div class="text-center" style="z-index: 10; text-shadow: 2px 2px 4px rgba(20, 100, 120, .75);">
+            <h1>Welcome to Penguin Book</h1>
             <h5 class="mt-3">Your one stop shop for contact management</h5>
             <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
                 Login
@@ -144,6 +136,51 @@
             </button>
         </div>
     </div>
+
+     <script>
+        /*document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('background-container'); // set in css to be a particular iceberg pic
+            const numberOfImages = 100; // set this to number of users, contacts, etc.
+            const placedImages = []; // Array to store the positions and sizes of the images
+            for (let i = 0; i < numberOfImages; i++) {
+                // Choose a random penguin picture 1-15
+                const randomNumber = Math.floor(Math.random() * 15) + 1;
+                const imagePath = `./images/bgPenguins/p${randomNumber}.png`;
+
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.classList.add('overlay-image')
+                if (i % 2 == 0) img.classList.add('img-hor') // Face half of them the other way
+
+                const maxX = container.offsetWidth - img.offsetWidth;
+                const maxY = (container.offsetHeight - img.offsetHeight);
+                const minY = maxY * .5; // higher value -> lower position penguins
+                const minX = maxX * .1;
+
+                // Generate a random position within the boundary
+                const x = Math.random() * maxX * .75 + minX;
+                const y = Math.random() * maxY * .3 + minY; // lower multiple -> less spread
+
+                const perspectiveMultiplier = (y / maxY); // penguins are smaller the further up they are
+
+                maxWidth = 45 * perspectiveMultiplier;
+                minWidth = 35 * perspectiveMultiplier;
+                img.width = Math.random() * (maxWidth - minWidth) + minWidth;
+
+                maxHeight = 60 * perspectiveMultiplier;
+                minHeight = 40 * perspectiveMultiplier;
+                img.height = Math.random() * (maxHeight - minHeight) + minHeight;
+
+                img.style.left = x + 'px';
+                img.style.top = y + 'px';
+
+                var degrees = Math.random() * 30 - 15;
+                img.style.transform = 'rotate(' + degrees + 'deg)';
+
+                container.appendChild(img);
+            }
+        });*/
+    </script>
 
     <footer class="bg-dark text-white mt-4 fixed-bottom">
         <div class="container text-center mt-1 mb-2">
