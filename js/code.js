@@ -222,16 +222,20 @@ async function updateContact()
 
 function register()
 {
-
-	let login = document.getElementById("userName").value;
-    let password = document.getElementById("newPassword").value;
-	let firstName = document.getElementById("first").value;
-	let lastName = document.getElementById("last").value;
+	let login = document.getElementById("signUserName").value;
+    let password = document.getElementById("signPassword").value;
+	let firstName = document.getElementById("signFirst").value;
+	let lastName = document.getElementById("signLast").value;
 	//let email = document.getElementById("newEmail").value;
 
 	let url = urlBase + '/Register.' + extension;
 
-	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let tmp = {
+		firstName:firstName,
+		lastName:lastName,
+		login:login,
+		password:password
+	};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let xhr = new XMLHttpRequest();
