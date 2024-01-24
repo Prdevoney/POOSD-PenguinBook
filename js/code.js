@@ -213,7 +213,7 @@ function searchContact()
 function loadContacts() {
     let tmp = {
         search: "",
-        userId: userId
+        userId: 2
     };
 
     let jsonPayload = JSON.stringify(tmp);
