@@ -140,11 +140,17 @@ select{
 }
 
 .background-container {
-    position: relative; 
+    
     background-image: url('../images/realIceberg.jpg');
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
-    background-attachment: flex;
     background-size: cover;
+
+    background-position: center;
+    justify-content: center;
+    
+    
 }
 
 .overlay-image {
