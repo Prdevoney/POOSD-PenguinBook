@@ -63,6 +63,7 @@ function saveCookie()
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	console.log(document.cookie); 
 }
 
 function readCookie()
@@ -110,7 +111,7 @@ function doLogout()
 function addContact()
 {
 	readCookie(); 
-	
+
     let first = document.getElementById("firstName").value;
     let last = document.getElementById("lastName").value;
     let phone = document.getElementById("phoneNumber").value;
