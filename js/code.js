@@ -237,7 +237,7 @@ function register()
 		password:password
 	};
 	let jsonPayload = JSON.stringify( tmp );
-
+	console.log(jsonPayload);
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -264,7 +264,7 @@ function register()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("signLoginResult").innerHTML = err.message;
 	}
 }
 
