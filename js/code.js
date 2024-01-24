@@ -109,6 +109,8 @@ function doLogout()
 
 function addContact()
 {
+	readCookie(); 
+	
     let first = document.getElementById("firstName").value;
     let last = document.getElementById("lastName").value;
     let phone = document.getElementById("phoneNumber").value;
