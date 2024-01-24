@@ -140,6 +140,8 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				loadContacts();
+				showTable();
 			}
 		};
 		xhr.send(jsonPayload);
@@ -149,6 +151,19 @@ function addContact()
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 }
+
+function showTable() {
+    var x = document.getElementById("addMe");
+    var contacts = document.getElementById("contactsTable")
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        contacts.style.display = "none";
+    } else {
+        x.style.display = "none";
+        contacts.style.display = "block";
+    }
+}
+
 
 function searchContact()
 {
@@ -195,6 +210,47 @@ function searchContact()
 	
 }
 
+function loadContacts() {
+    let tmp = {
+        search: "",
+        userId: userId
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + '/SearchContacts.' + extension;
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let jsonObject = JSON.parse(xhr.responseText);
+                if (jsonObject.error) {
+                    console.log(jsonObject.error);
+                    return;
+                }
+                let text = "<table border='1'>"
+                for (let i = 0; i < jsonObject.results.length; i++) {
+                    ids[i] = jsonObject.results[i].ID
+                    text += "<tr id='row" + i + "'>"
+                    text += "<td id='first_Name" + i + "'><span>" + jsonObject.results[i].FirstName + "</span></td>";
+                    text += "<td id='last_Name" + i + "'><span>" + jsonObject.results[i].LastName + "</span></td>";
+                    text += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
+                    text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
+
+                }
+                text += "</table>"
+                document.getElementById("tbody").innerHTML = text;
+            }
+        };
+        xhr.send(jsonPayload);
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
 async function updateContact()
 {
     let firstName = document.getElementbyId("firstName").value;
@@ -222,18 +278,22 @@ async function updateContact()
 
 function register()
 {
-
-	let login = document.getElementById("userName").value;
-    let password = document.getElementById("newPassword").value;
-	let firstName = document.getElementById("first").value;
-	let lastName = document.getElementById("last").value;
+	let login = document.getElementById("signUserName").value;
+    let password = document.getElementById("signPassword").value;
+	let firstName = document.getElementById("signFirst").value;
+	let lastName = document.getElementById("signLast").value;
 	//let email = document.getElementById("newEmail").value;
 
 	let url = urlBase + '/Register.' + extension;
 
-	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let tmp = {
+		firstName:firstName,
+		lastName:lastName,
+		login:login,
+		password:password
+	};
 	let jsonPayload = JSON.stringify( tmp );
-
+	console.log(jsonPayload);
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -243,25 +303,23 @@ function register()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
-				login = jsonObject.login;
-				password = jsonObject.password;
-
-				saveCookie();
-	
-				window.location.href = "contacts.html";
+				doLoginAfterRegister(login, password);
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("signLoginResult").innerHTML = err.message;
 	}
+}
+
+function doLoginAfterRegister(login, password)
+{
+	document.getElementById("loginName").value = login; 
+	document.getElementById("loginPassword").value = password;
+
+	doLogin();
 }
 
 function deleteContact()
