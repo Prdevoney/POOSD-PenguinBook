@@ -161,7 +161,7 @@ Once in mysql Database:
     mysql -u root -p (press enter)
     POOSD-2024-Spring (Enter Password)
 
-    1. Use COP4331;
-    2. select * from Users; <- Checks User
-    3. select * from Contacts where UserID=(value);
+    1. Mysql> Use COP4331;
+    2. MySql> select * from Users; <- Checks User
+    3. MySql> select * from Contacts where UserID=(value);
     
