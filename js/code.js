@@ -247,17 +247,7 @@ function register()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
-				login = jsonObject.login;
-				password = jsonObject.password;
-
-				saveCookie();
-	
-				window.location.href = "contacts.html";
+				doLoginAfterRegister(login, password);
 			}
 		};
 		xhr.send(jsonPayload);
@@ -266,6 +256,14 @@ function register()
 	{
 		document.getElementById("signLoginResult").innerHTML = err.message;
 	}
+}
+
+function doLoginAfterRegister(login, password)
+{
+	document.getElementById("loginName").value = login; 
+	document.getElementById("loginPassword").value = password;
+
+	doLogin();
 }
 
 function deleteContact()
