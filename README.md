@@ -153,3 +153,15 @@ Clone This Repo Locally:
     3. Select this repository "POOSD-PenguinBook"
 
     4. Select where you want to store it on your computer
+
+Once in mysql Database:
+
+    Log in normally
+    
+    mysql -u root -p (press enter)
+    POOSD-2024-Spring (Enter Password)
+
+    1. Mysql> Use COP4331;
+    2. MySql> select * from Users; <- Checks User
+    3. MySql> select * from Contacts where UserID=(value);
+    
