@@ -11,224 +11,254 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
 
-  <body id="background-container" class="py-5 background-container">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <body id="background-container" class="py-5 background-container">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
-    <nav class="navbar bg-body-tertiary fixed-top">
-        <div class="container d-flex justify-contenent-between">
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container d-flex justify-contenent-between">
 
-            <a class="navbar-brand" href="#">
-                <img src="./images/images.jpg" alt="PenguinBook" width="35" height="40">
-                Penguin Book
-            </a>
+                <a class="navbar-brand" href="#">
+                    <img src="./images/images.jpg" alt="PenguinBook" width="35" height="40">
+                    Penguin Book
+                </a>
+
+                <div>
+
+                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
+                        My Account
+                    </button>
+
+                    <button type="button" class="btn btn-primary" onclick="doLogout();">
+                        Logout
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
+                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                        </svg>
+                    </button>
+        </nav>
+
+        <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header container justify-content-center">
+                        <h1 class="modal-title fs-5" id="ModalLabel1">My Account</h1>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="container d-flex">
+                            <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
+                            <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                        </div>
+
+                        <div class="mb-3 container d-flex justify-contenent-between">
+                            <input class="form-control me-1" type="text" placeholder="Get First Name" aria-label="default input example" disabled readonly>
+                            <input class="form-control" type="text" placeholder="Get Last Name" aria-label="default input example" disabled readonly>
+                        </div>
+
+                        <div class="mb-3 container">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Get Email Account" disabled readonly>
+                        </div>
+
+                        <div class="mb-3 container">
+                            <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                            <input class="form-control" type="text" placeholder="Get User Name" aria-label="default input example" disabled readonly>
+                        </div>
+
+                        <div class="mb-3 container">
+                            <label for="inputPassword5" class="form-label">Password</label>
+                            <input type="password" id="inputPassword5" class="form-control" placeholder="Get Password" aria-describedby="passwordHelpBlock" disabled readonly>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete Account</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Edit Account</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <div>
 
-        <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#Modal1">
-            My Account
-        </button>
-
-        <button type="button" class="btn btn-primary" onclick="doLogout();">
-            Logout
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
-                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-            </svg>
-        </button>
-    </nav>
-
-    <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <div class="modal-header container justify-content-center">
-                    <h1 class="modal-title fs-5" id="ModalLabel1">My Account</h1>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="container d-flex">
-                        <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
-                        <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
-                    </div>
-
-                    <div class="mb-3 container d-flex justify-contenent-between">
-                        <input class="form-control me-1" type="text" placeholder="Get First Name" aria-label="default input example" disabled readonly>
-                        <input class="form-control" type="text" placeholder="Get Last Name" aria-label="default input example" disabled readonly>
-                    </div>
-
-                    <div class="mb-3 container">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Get Email Account" disabled readonly>
-                    </div>
-
-                    <div class="mb-3 container">
-                        <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                        <input class="form-control" type="text" placeholder="Get User Name" aria-label="default input example" disabled readonly>
-                    </div>
-
-                    <div class="mb-3 container">
-                        <label for="inputPassword5" class="form-label">Password</label>
-                        <input type="password" id="inputPassword5" class="form-control" placeholder="Get Password" aria-describedby="passwordHelpBlock" disabled readonly>
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete Account</button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Edit Account</button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-
+            <div class="container mt-5 mb-3 justify-content-center">
+                <form class="d-flex col-6 offset-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
             </div>
-        </div>
-    </div>
 
-    <div>
-
-        <div class="container mt-5 mb-3 justify-content-center">
-            <form class="d-flex col-6 offset-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">
-                    Search
-                </button>
-            </form>
-        </div>
-
-        <div class="container d-flex justify-content-center mb-3">
-            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal2">Add Contact</button>
-            <button class="btn btn-outline-primary mx-1">Delete Contact</button>
-            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal3">Update Contact</button>
-        </div>
+            <div class="container d-flex justify-content-center mb-3">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal2">Add Contact</button>
+                <button class="btn btn-outline-primary mx-1" data-bs-toggle="modal" data-bs-target="#Modal4">Delete Contact</button>
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#Modal3">Update Contact</button>
+            </div>
 
 
-        <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
 
-                    <div class="modal-header container justify-content-center">
-                        <h1 class="modal-title fs-5" id="ModalLabel1">Add Contact</h1>
+                        <div class="modal-header container justify-content-center">
+                            <h1 class="modal-title fs-5" id="ModalLabel1">Add Contact</h1>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="container d-flex">
+                                <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
+                                <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                            </div>
+
+                            <div class="mb-3 container d-flex justify-contenent-between">
+                                <input class="form-control me-1" id="firstName" type="text" placeholder="First Name" aria-label="default input example">
+                                <input class="form-control" id="lastName" type="text" placeholder="Last Name" aria-label="default input example">
+                            </div>
+
+                            <div class="mb-3 container">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email Account">
+                            </div>
+
+                            <div class="mb-3 container">
+                                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                                <input class="form-control" id="phoneNumber" type="text" placeholder="User Name" aria-label="default input example">
+                            </div>
+
+                            <button type="button" class="btn btn-primary container" onclick="addContact();">Add Contact</button>
+                            <span id="contactAddResult"></span>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="modal-body">
+            <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
 
-                        <div class="container d-flex">
-                            <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
-                            <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                        <div class="modal-header container justify-content-center">
+                            <h1 class="modal-title fs-5" id="ModalLabel1">Update Contact</h1>
                         </div>
 
-                        <div class="mb-3 container d-flex justify-contenent-between">
-                            <input class="form-control me-1" id="firstName" type="text" placeholder="First Name" aria-label="default input example">
-                            <input class="form-control" id="lastName" type="text" placeholder="Last Name" aria-label="default input example">
-                        </div>
+                        <div class="modal-body">
 
-                        <div class="mb-3 container">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email Account">
-                        </div>
+                            <div class="container d-flex">
+                                <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
+                                <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                            </div>
 
-                        <div class="mb-3 container">
-                            <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-                            <input class="form-control" id="phoneNumber" type="text" placeholder="User Name" aria-label="default input example">
-                        </div>
+                            <div class="mb-3 container d-flex justify-contenent-between">
+                                <input class="form-control me-1" id="firstNameU" type="text" placeholder="New First Name" aria-label="default input example">
+                                <input class="form-control" id="lastNameU" type="text" placeholder="New Last Name" aria-label="default input example">
+                            </div>
 
-                        <button type="button" class="btn btn-primary container" onclick="addContact();">Add Contact</button>
-                        <span id="contactAddResult"></span>
+                            <div class="mb-3 container">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailU" placeholder="New Email">
+                            </div>
+
+                            <div class="mb-3 container">
+                                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                                <input class="form-control" id="phoneNumberU" type="text" placeholder="New User Name" aria-label="default input example">
+                            </div>
+
+                            <button type="button" class="btn btn-primary container" onclick="updateContact();">Update Contact</button>
+                            <span id="contactDeleteResult"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
 
                     <div class="modal-header container justify-content-center">
-                        <h1 class="modal-title fs-5" id="ModalLabel1">Update Contact</h1>
+                        <h1 class="modal-title fs-5" id="ModalLabel1">Delete Contact</h1>
                     </div>
 
                     <div class="modal-body">
 
                         <div class="container d-flex">
-                            <label for="exampleFormControlInput1" class="form-label col-6 me-1">First Name</label>
-                            <label for="exampleFormControlInput1" class="form-label col-6">Last Name</label>
+                            <label for="exampleFormControlInput1" class="form-label">Are you sure you want to delete this contact?</label>
+
+                        </div>
+                       
+
+                        <div class="container d-flex">
+                            <button type="button" class="btn btn-primary container form-label col-6 me-1" onclick="deleteContact();">Yes</button>
+                            <button type="button" class="btn btn-primary container form-label col-6">No</button>
                         </div>
 
-                        <div class="mb-3 container d-flex justify-contenent-between">
-                            <input class="form-control me-1" id="firstNameU" type="text" placeholder="New First Name" aria-label="default input example">
-                            <input class="form-control" id="lastNameU" type="text" placeholder="New Last Name" aria-label="default input example">
-                        </div>
-
-                        <div class="mb-3 container">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailU" placeholder="New Email">
-                        </div>
-
-                        <div class="mb-3 container">
-                            <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-                            <input class="form-control" id="phoneNumberU" type="text" placeholder="New User Name" aria-label="default input example">
-                        </div>
-
-                        <button type="button" class="btn btn-primary container" onclick="updateContact();">Update Contact</button>
                         <span id="contactUpdateResult"></span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
-    <div class="container" style="border-bottom: 1px solid #e5e5e5">
-        <ul class="list-group container list-group-horizontal d-flex justify-content-center">
-            <li class="list-group-item py-2" style="width: 50px">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled>
-            </li>
-            <li class="list-group-item py-2" style="width: 225px">
-                First Name
-            </li>
-            <li class="list-group-item py-2" style="width: 225px">
-                Last Name
-            </li>
-            <li class="list-group-item py-2" style="width: 225px">
-                Phone Number
-            </li>
-            <li class="list-group-item py-2" style="width: 225px">
-                Email
-            </li>
-        </ul>
-    </div>
 
-    <div class="tables">
-        <div class="tbl-content" id="contactsTable">
-            <table id="contacts" cellpadding="0" cellspacing="0">
-                
+
+        <div class="container" style="border-bottom: 1px solid #e5e5e5">
+            <ul class="list-group container list-group-horizontal d-flex justify-content-center">
+                <li class="list-group-item py-2" style="width: 50px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled>
+                </li>
+                <li class="list-group-item py-2" style="width: 225px">
+                    First Name
+                </li>
+                <li class="list-group-item py-2" style="width: 225px">
+                    Last Name
+                </li>
+                <li class="list-group-item py-2" style="width: 225px">
+                    Phone Number
+                </li>
+                <li class="list-group-item py-2" style="width: 225px">
+                    Email
+                </li>
+            </ul>
+        </div>
+
+        <div class="tables">
+            <div class="tbl-content" id="contactsTable">
+                <table id="contacts" cellpadding="0" cellspacing="0">
+
                     <tr>
                         <th><input type="checkbox" name="name1" />&nbsp;</th>
                         <th>First&nbspName</th>
                         <th>Last&nbspName</th>
                         <th>email</th>
                         <th>Phone</th>
-                        
-                    </tr>
-                
-                <tbody id="tbody"></tbody>
-            </table>
-        </div>
-    </div>
 
-    <footer class="bg-dark text-white mt-4 fixed-bottom">
-        <div class="container text-center mt-1 mb-2">
-            Follow us on GitHub: </br>
-            <a href="https://github.com/Prdevoney/POOSD-PenguinBook.git" class="text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                </svg> 
-                Penguin Book
-            </a>
+                    </tr>
+
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
         </div>
-    </footer>
-  </body>
+
+        <footer class="bg-dark text-white mt-4 fixed-bottom">
+            <div class="container text-center mt-1 mb-2">
+                Follow us on GitHub: </br>
+                <a href="https://github.com/Prdevoney/POOSD-PenguinBook.git" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                    </svg>
+                    Penguin Book
+                </a>
+            </div>
+        </footer>
+    </body>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
         const container = document.getElementById('background-container'); // set in css to be a particular iceberg pic
