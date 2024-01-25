@@ -324,5 +324,36 @@ function doLoginAfterRegister(login, password)
 
 function deleteContact()
 {
+	var namef_val = document.getElementById("firstName" + no).innerText;
+	var namel_val = document.getElementById("lastName" + no).innerText;
+	nameOne = namef_val.substring(0, namef_val.length);
+	nameTwo = namel_val.substring(0, namel_val.length);
 
+		document.getElementById("row" + no + "").outerHTML = "";
+		let tmp = {
+			firstName: nameOne,
+			lastName: nameTwo,
+			userId: userId
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let url = urlBase + '/DeleteContacts.' + extension;
+
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		try {
+			xhr.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+
+					console.log("Contact has been deleted");
+					loadContacts();
+				}
+			};
+			xhr.send(jsonPayload);
+		} catch (err) {
+			console.log(err.message);
+		}
+
+	};
 }
