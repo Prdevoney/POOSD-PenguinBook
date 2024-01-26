@@ -232,6 +232,7 @@ function loadContacts() {
                     console.log(jsonObject.error);
                     return;
                 }
+				/*
                 let text = "<table border='1'>"
                 for (let i = 0; i < jsonObject.results.length; i++) {
                     ids[i] = jsonObject.results[i].userId
@@ -243,7 +244,9 @@ function loadContacts() {
                     text += "<tr/>"
                 }
                 text += "</table>"
-                document.getElementById("tbody").innerHTML = text;
+				*/
+				let text = "<h1>"+jsonObject.results[1].firstName+"</td>";
+                document.getElementById("libody").innerHTML = text;
             }
         };
         xhr.send(jsonPayload);
