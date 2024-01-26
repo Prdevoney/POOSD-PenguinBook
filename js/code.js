@@ -153,10 +153,12 @@ function addContact()
 }
 
 function showTable() {
-    
+    var x = document.getElementById("addMe");
     var contacts = document.getElementById("contactsTable")
-    contacts.style.display = "block";
-	
+    
+        x.style.display = "block";
+        contacts.style.display = "none";
+    
 }
 
 
