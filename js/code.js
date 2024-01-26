@@ -168,7 +168,7 @@ function showTable() {
 function searchContact()
 {
 	let srch = document.getElementById("searchText").value;
-	document.getElementById("ContactSearchResult").innerHTML = "";
+	document.getElementById("contactSearchResult").innerHTML = "";
 	
 	let contactList = "";
 
