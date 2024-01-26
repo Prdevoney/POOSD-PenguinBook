@@ -334,6 +334,7 @@ function deleteContact()
 			firstName: nameOne,
 			lastName: nameTwo,
 			userId: userId
+		}
 
 		let jsonPayload = JSON.stringify(tmp);
 
@@ -356,4 +357,4 @@ function deleteContact()
 		}
 
 	};
-}
+
