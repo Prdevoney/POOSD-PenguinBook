@@ -165,54 +165,32 @@ function showTable() {
 }
 
 
-function searchContact()
+function searchContacts()
 {
-	let srch = document.getElementById("searchText").value;
-	document.getElementById("contactSearchResult").innerHTML = "";
-	
-	let contactList = "";
+	const content = document.getElementById("searchText");
+    const selections = content.value.toUpperCase().split(' ');
+    const table = document.getElementById("contacts");
+    const tr = table.getElementsByTagName("tr");// Table Row
 
-	let tmp = {search:srch,userId:userId};
-	let jsonPayload = JSON.stringify( tmp );
+    for (let i = 0; i < tr.length; i++) {
+        const td_fn = tr[i].getElementsByTagName("td")[0];// Table Data: First Name
+        const td_ln = tr[i].getElementsByTagName("td")[1];// Table Data: Last Name
 
-	let url = urlBase + '/SearchContacts.' + extension;
-	
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
-				let jsonObject = JSON.parse( xhr.responseText );
-				if (jsonObject.error) {
-                    console.log(jsonObject.error);
-					console.log("Error");
-                    return;
+        if (td_fn && td_ln) {
+            const txtValue_fn = td_fn.textContent || td_fn.innerText;
+            const txtValue_ln = td_ln.textContent || td_ln.innerText;
+            tr[i].style.display = "none";
+
+            for (selection of selections) {
+                if (txtValue_fn.toUpperCase().indexOf(selection) > -1) {
+                    tr[i].style.display = "";
                 }
-				
-				for( let i=0; i<jsonObject.results.length; i++ )
-				{
-					contactList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
-					{
-						contactList += "<br />\r\n";
-					}
-				}
-				
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("contactSearchResult").innerHTML = err.message;
-	}
-	
+                if (txtValue_ln.toUpperCase().indexOf(selection) > -1) {
+                    tr[i].style.display = "";
+                }
+            }
+        }
+    }
 }
 
 
