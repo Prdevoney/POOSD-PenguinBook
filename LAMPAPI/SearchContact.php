@@ -1,9 +1,16 @@
 <?php
 $inData = getRequestInfo();
 
+$userId = $inData["userId"];
+
+// Check if userId is empty
+if (empty($userId)) {
+    returnWithError("UserID is required.");
+    exit();
+}
+
 $firstName = $inData["firstName"];
 $lastName = $inData["lastName"];
-$userId = $inData["userId"];
 
 $conn = new mysqli("localhost", "TheBeast", "POOSD-2024-Spring", "COP4331");
 
