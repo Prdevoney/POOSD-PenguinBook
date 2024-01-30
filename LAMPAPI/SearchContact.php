@@ -18,8 +18,8 @@ if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
     $stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID = ? AND BINARY FirstName LIKE ? AND BINARY LastName LIKE ?");
-    $searchFirstName = "%" . $firstName . "%";
-    $searchLastName = "%" . $lastName . "%";
+    $searchFirstName = $firstName . "%";
+    $searchLastName = $lastName . "%";
     $stmt->bind_param("iss", $userId, $searchFirstName, $searchLastName);
     $stmt->execute();
     
