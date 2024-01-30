@@ -190,7 +190,7 @@ function searchContact()
 				let jsonObject = JSON.parse( xhr.responseText );
 				if (jsonObject.error) {
                     console.log(jsonObject.error);
-					console.log("Error");
+					console.log("Error object is not allowing msg");
                     return;
                 }
 				
