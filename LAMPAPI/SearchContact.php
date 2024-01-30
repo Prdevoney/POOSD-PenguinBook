@@ -1,9 +1,16 @@
 <?php
 $inData = getRequestInfo();
 
+$userId = $inData["userId"];
+
+// Check if userId is empty
+if (empty($userId)) {
+    returnWithError("UserID is required.");
+    exit();
+}
+
 $firstName = $inData["firstName"];
 $lastName = $inData["lastName"];
-$userId = $inData["userId"];
 
 $conn = new mysqli("localhost", "TheBeast", "POOSD-2024-Spring", "COP4331");
 
@@ -11,8 +18,8 @@ if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
     $stmt = $conn->prepare("SELECT * FROM Contacts WHERE UserID = ? AND BINARY FirstName LIKE ? AND BINARY LastName LIKE ?");
-    $searchFirstName = "%" . $firstName . "%";
-    $searchLastName = "%" . $lastName . "%";
+    $searchFirstName = $firstName . "%";
+    $searchLastName = $lastName . "%";
     $stmt->bind_param("iss", $userId, $searchFirstName, $searchLastName);
     $stmt->execute();
     
