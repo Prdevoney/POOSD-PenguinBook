@@ -228,7 +228,7 @@ function loadContacts() {
                 text += "</table>"
 				
 				//let text = "<h1>"+jsonObject.results[1].firstName+"</td>";
-                document.getElementById("libody").innerHTML = text;
+                document.getElementById("tbody").innerHTML = text;
             }
         };
         xhr.send(jsonPayload);
