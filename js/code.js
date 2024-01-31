@@ -141,6 +141,7 @@ function addContact()
 			{
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 				loadContacts();
+				showTable();
 				
 			}
 		};
