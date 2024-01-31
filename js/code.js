@@ -165,9 +165,8 @@ function showTable() {
     }
 }
 
-function searchContacts()
-{
-	const content = document.getElementById("searchText");
+function searchContacts() {
+    const content = document.getElementById("searchText");
     const selections = content.value.toUpperCase().split(' ');
     const table = document.getElementById("contacts");
     const tr = table.getElementsByTagName("tr");// Table Row
