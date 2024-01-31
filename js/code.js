@@ -164,7 +164,6 @@ function showTable() {
     }
 }
 
-
 function searchContacts()
 {
 	const content = document.getElementById("searchText");
@@ -237,6 +236,109 @@ function loadContacts() {
         console.log(err.message);
     }
 }
+
+
+function edit_row(id) {
+    document.getElementById("edit_button" + id).style.display = "none";
+    document.getElementById("save_button" + id).style.display = "inline-block";
+
+    var firstNameI = document.getElementById("first_Name" + id);
+    var lastNameI = document.getElementById("last_Name" + id);
+    var email = document.getElementById("email" + id);
+    var phone = document.getElementById("phone" + id);
+
+    var namef_data = firstNameI.innerText;
+    var namel_data = lastNameI.innerText;
+    var email_data = email.innerText;
+    var phone_data = phone.innerText;
+
+    firstNameI.innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "'>";
+    lastNameI.innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
+    email.innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
+    phone.innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>"
+}
+
+function save_row(no) {
+    var namef_val = document.getElementById("namef_text" + no).value;
+    var namel_val = document.getElementById("namel_text" + no).value;
+    var email_val = document.getElementById("email_text" + no).value;
+    var phone_val = document.getElementById("phone_text" + no).value;
+    var id_val = ids[no]
+
+    document.getElementById("first_Name" + no).innerHTML = namef_val;
+    document.getElementById("last_Name" + no).innerHTML = namel_val;
+    document.getElementById("email" + no).innerHTML = email_val;
+    document.getElementById("phone" + no).innerHTML = phone_val;
+
+    document.getElementById("edit_button" + no).style.display = "inline-block";
+    document.getElementById("save_button" + no).style.display = "none";
+
+    let tmp = {
+        phoneNumber: phone_val,
+        emailAddress: email_val,
+        newFirstName: namef_val,
+        newLastName: namel_val,
+        id: id_val
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + '/UpdateContacts.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("Contact has been updated");
+                loadContacts();
+            }
+        };
+        xhr.send(jsonPayload);
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+function delete_row(no) {
+    var namef_val = document.getElementById("first_Name" + no).innerText;
+    var namel_val = document.getElementById("last_Name" + no).innerText;
+    nameOne = namef_val.substring(0, namef_val.length);
+    nameTwo = namel_val.substring(0, namel_val.length);
+    let check = confirm('Confirm deletion of contact: ' + nameOne + ' ' + nameTwo);
+    if (check === true) {
+        document.getElementById("row" + no + "").outerHTML = "";
+        let tmp = {
+            firstName: nameOne,
+            lastName: nameTwo,
+            userId: userId
+        };
+
+        let jsonPayload = JSON.stringify(tmp);
+
+        let url = urlBase + '/DeleteContacts.' + extension;
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        try {
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    console.log("Contact has been deleted");
+                    loadContacts();
+                }
+            };
+            xhr.send(jsonPayload);
+        } catch (err) {
+            console.log(err.message);
+        }
+
+    };
+
+}
+
 
 async function updateContact()
 {
