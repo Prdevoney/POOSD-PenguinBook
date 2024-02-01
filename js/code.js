@@ -240,10 +240,12 @@ function searchContacts() {
 function searchContact() {
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
-    document.getElementById("searchResult").classList.remove("error");
+
 
     let contactlist = "";
+
     var jsonPayload = JSON.stringify({ userid: userId, searchResults: srch});
+    
     var url = urlBase + '/searchContacts.' + extension;
 
 
