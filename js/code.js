@@ -238,31 +238,62 @@ function searchContacts() {
 }
 
 function searchContact() {
-    const content = document.getElementById("searchText");
-    const selections = content.value.toUpperCase().split(' ');
-    const table = document.getElementById("contacts");
-    const tr = table.getElementsByTagName("tr");// Table Row
+	let srch = document.getElementById("searchText").value;
+	document.getElementById("searchResult").innerHTML = "";    
+    document.getElementById("searchResult").classList.remove("error");
 
-    for (let i = 0; i < tr.length; i++) {
-        const td_fn = tr[i].getElementsByTagName("td")[0];// Table Data: First Name
-        const td_ln = tr[i].getElementsByTagName("td")[1];// Table Data: Last Name
+    let contactlist = "";
+    var jsonPayload = JSON.stringify({ userid: userId, searchResults: srch});
+    var url = urlBase + '/searchContacts.' + extension;
 
-        if (td_fn && td_ln) {
-            const txtValue_fn = td_fn.textContent || td_fn.innerText;
-            const txtValue_ln = td_ln.textContent || td_ln.innerText;
-            tr[i].style.display = "none";
 
-            for (selection of selections) {
-                if (txtValue_fn.toUpperCase().indexOf(selection) > -1) {
-                    tr[i].style.display = "";
-                }
-                if (txtValue_ln.toUpperCase().indexOf(selection) > -1) {
-                    tr[i].style.display = "";
-                }
-            }
-        }
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try
+    {
+            xhr.onreadystatechange = function()
+            {
+                    if (this.readyState == 4 && this.status == 200)
+                    {
+                            document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+                            var jsonObject = JSON.parse( xhr.responseText );
+                            var results = jsonObject.results;
+                            //var temp = jsonObject.results.length;
+                            console.log(results);
+                            console.log("did my cats just ");
+
+                            for (const [key, val] of Object.entries(results))
+                            {
+
+                                    console.log("harmonize");
+                                    contactList += "Contact Id: ";
+                                    contactList += val.contactId;
+                                    contactList += " First Name: ";
+                                contactList += val.firstName;
+                                    contactList += " Last Name: ";
+                                    contactList += val.lastName;
+                                    contactList += " Email: ";
+                                    contactList += val.email;
+                                    contactList += " Phone: ";
+                                    contactList += val.phone;
+                                    contactList += "<br />\r\n";
+                contactList += "<br />\r\n";
+                            }
+
+                                    console.log(contactList);
+
+                                    document.getElementsByTagName("p")[0].innerHTML = contactList;
+                    }
+            };
+            xhr.send(jsonPayload);
+    }
+     catch(err)
+    {
+            document.getElementById("contactSearchResult").innerHTML = err.message;
     }
 }
+
 
 function edit_row(id) {
     document.getElementById("edit_button" + id).style.display = "none";
