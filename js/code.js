@@ -239,7 +239,7 @@ function searchContacts() {
 
 function searchContact() {
 	let srch = document.getElementById("searchText").value;
-	document.getElementById("searchResult").innerHTML = "";    
+	document.getElementById("contactSearchResult").innerHTML = "";
     document.getElementById("searchResult").classList.remove("error");
 
     let contactlist = "";
