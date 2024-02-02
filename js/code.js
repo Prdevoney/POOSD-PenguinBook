@@ -244,7 +244,7 @@ function searchContact() {
 
     let contactlist = "";
 
-    var jsonPayload = JSON.stringify({ userid: userId, searchResults: srch});
+    var jsonPayload = JSON.stringify({ userId: userId, search: srch});
 
     var url = urlBase + '/SearchContacts.' + extension;
 
