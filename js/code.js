@@ -238,11 +238,15 @@ function searchContacts() {
 }
 
 function searchContact() {
+    readCookie(); 
+    
 	let srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 
 
     let contactlist = "";
+
+    
 
     var jsonPayload = JSON.stringify({ userId: userId, search: srch});
 
