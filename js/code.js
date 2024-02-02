@@ -267,20 +267,8 @@ function searchContact() {
 
                             for (let i =0; i < results.length; i++)
                             {
-
+                             
                                     console.log("harmonize");
-                                    contactList += "Contact Id: ";
-                                    contactList += val.contactId;
-                                    contactList += " First Name: ";
-                                contactList += val.firstName;
-                                    contactList += " Last Name: ";
-                                    contactList += val.lastName;
-                                    contactList += " Email: ";
-                                    contactList += val.email;
-                                    contactList += " Phone: ";
-                                    contactList += val.phone;
-                                    contactList += "<br />\r\n";
-                contactList += "<br />\r\n";
                             }
 
                                     console.log(contactList);
