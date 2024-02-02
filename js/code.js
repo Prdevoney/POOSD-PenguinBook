@@ -265,7 +265,7 @@ function searchContact() {
                             console.log(results);
                             console.log("did my cats just ");
 
-                            for (const [key, val] of Object.entries(results))
+                            for (let i =0; i < results.length; i++)
                             {
 
                                     console.log("harmonize");
