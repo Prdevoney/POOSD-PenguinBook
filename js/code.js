@@ -264,7 +264,8 @@ function searchContact() {
                             //var temp = jsonObject.results.length;
                             console.log(results);
                             console.log("did my cats just ");
-
+                            
+                            console.log(results.length)
                             for (let i =0; i < results.length; i++)
                             {
                              
