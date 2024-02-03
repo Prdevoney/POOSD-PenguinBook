@@ -272,13 +272,13 @@ function searchContact() {
                             console.log(results.length)
                             for (let i =0; i < results.length; i++)
                             {
-                             
-                                    console.log("harmonize");
+                                
+                                   
                             }
 
-                                    console.log(contactList);
+                            //console.log(contactList);
 
-                                    document.getElementsByTagName("p")[0].innerHTML = contactList;
+                            document.getElementsByTagName("p")[0].innerHTML = contactList;
                     }
             };
             xhr.send(jsonPayload);
