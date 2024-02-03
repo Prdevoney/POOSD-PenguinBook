@@ -260,7 +260,7 @@ function searchContact() {
 
                 console.log(text);
 
-                document.getElementsByTagName("p")[0].innerHTML = contactList;
+                document.getElementsByTagName("tbody").innerHTML = text;
             }
         };
         xhr.send(jsonPayload);
