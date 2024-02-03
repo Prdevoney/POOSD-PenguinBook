@@ -250,10 +250,10 @@ function searchContact() {
                 //console.log(results.length)
                 for (let i = 0; i < results.length; i++) {
                     text += "<tr id='row" + i + "'>"
-                    text += "<td id='first_Name" + i + "'><span>" + jsonObject.results[i].FirstName + "</span></td>";
-                    text += "<td id='last_Name" + i + "'><span>" + jsonObject.results[i].LastName + "</span></td>";
-                    text += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
-                    text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
+                    text += "<td id='first_Name" + i + "'><span>" + jsonObject.results[i].firstName + "</span></td>";
+                    text += "<td id='last_Name" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
+                    text += "<td id='email" + i + "'><span>" + jsonObject.results[i].emailAddress + "</span></td>";
+                    text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].phoneNumber + "</span></td>";
                     text += "<tr/>"
                 }
                 text += "</table>"
