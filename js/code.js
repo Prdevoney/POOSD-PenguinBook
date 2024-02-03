@@ -251,7 +251,7 @@ function searchContact() {
                 for (let i = 0; i < results.length; i++) {
                     text += "<tr id='row" + i + "'>"
                     text += "<td id='first_Name" + i + "'><span>" + results[i].FirstName + "</span></td>";
-                    text += "<td id='last_Name" + i + "'><span>" + results[i].LastName + "</span></td>";
+                    text += "<td id='last_Name" + i + "'><span>" + results[i].LastNam + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + results[i].Email + "</span></td>";
                     text += "<td id='phone" + i + "'><span>" + results[i].Phone + "</span></td>";
                     text += "<tr/>"
