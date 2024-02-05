@@ -175,7 +175,7 @@ function loadContacts() {
                     ids[i] = jsonObject.results[i].userId
                     text += "<tr id='row" + i + "'>"
                     text += "<td id='firstName" + i + "'><span>" + jsonObject.results[i].firstName + "</span></td>";
-                    text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
+                    //text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + jsonObject.results[i].email + "</span></td>";
                     text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].phone + "</span></td>";
                     text += "<tr/>"
