@@ -5,6 +5,8 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+let selectedContactId = null;
+
 function doLogin() {
     userId = 0;
     firstName = "";
@@ -182,6 +184,21 @@ function loadContacts() {
 
                 //let text = "<h1>"+jsonObject.results[1].firstName+"</td>";
                 document.getElementById("tbody").innerHTML = text;
+
+                let rows = document.querySelectorAll("#contacttable tr");
+                rows.forEach((row, index) => {
+                // Skip header row
+                if (index >= 0) {
+                    row.addEventListener("click", function() {
+                        // Highlight selected row
+                        if (selectedContactId !== null) {
+                            document.getElementById("row" + selectedContactId).classList.remove("selected");
+                        }
+                        this.classList.add("selected");
+                        selectedContactId = index - 1;
+                    });
+                }
+            });
             }
         };
         xhr.send(jsonPayload);
@@ -223,14 +240,9 @@ function searchContact() {
     let srch = document.getElementById("searchText").value;
     document.getElementById("contactSearchResult").innerHTML = "";
 
-
-
-
-
     var jsonPayload = JSON.stringify({ userId: userId, search: srch });
 
     var url = urlBase + '/SearchContacts.' + extension;
-
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -372,7 +384,6 @@ function delete_row(no) {
 
 }
 
-
 async function updateContact() {
     let firstName = document.getElementbyId("firstName").value;
     let lastName = document.getElementbyId("lastName").value;
@@ -438,6 +449,10 @@ function doLoginAfterRegister(login, password) {
 }
 
 function deleteContact() {
+    if (selectedContactId == null) {
+        alert("Please select a contact to delete.");
+        return;
+    }
     var namef_val = document.getElementById("firstName" + no).innerText;
     var namel_val = document.getElementById("lastName" + no).innerText;
     nameOne = namef_val.substring(0, namef_val.length);
