@@ -170,20 +170,40 @@ function loadContacts() {
                     return;
                 }
 
-                let text = "<table border='1'>";
+                let text = "<table border='1'>"
                 for (let i = 0; i < jsonObject.results.length; i++) {
-                    text += "<tr id='row" + i + "'>";
+                    ids[i] = jsonObject.results[i].userId
+                    text += "<tr id='row" + i + "'>"
                     text += "<td id='firstName" + i + "'><span>" + jsonObject.results[i].firstName + "</span></td>";
                     text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + jsonObject.results[i].email + "</span></td>";
                     text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].phone + "</span></td>";
-                
-                    text += "<td><button onclick='selectContact(" + i + ")'>Select</button></td>";
-                    text += "</tr>";
+                    text += "<tr/>"
                 }
-                text += "</table>";
+                text += "</table>"
 
+                //let text = "<h1>"+jsonObject.results[1].firstName+"</td>";
                 document.getElementById("tbody").innerHTML = text;
+
+                if (jsonObject.results.length > 0) {
+                    selectedContactId = 0; 
+                    document.getElementById("row0").classList.add("selected");
+                }
+
+                let rows = document.querySelectorAll("#contacttable tr");
+                rows.forEach((row, index) => {
+                // Skip header row
+                if (index >= 0) {
+                    row.addEventListener("click", function() {
+                        // Highlight selected row
+                        if (selectedContactId !== null) {
+                            document.getElementById("row" + selectedContactId).classList.remove("selected");
+                        }
+                        this.classList.add("selected");
+                        selectedContactId = index - 1;
+                    });
+                }
+            });
             }
         };
         xhr.send(jsonPayload);
@@ -191,15 +211,6 @@ function loadContacts() {
         console.log(err.message);
     }
 }
-
-function selectContact(index) {
-    if (selectedContactId !== null) {
-        document.getElementById("row" + selectedContactId).classList.remove("selected");
-    }
-    selectedContactId = index;
-    document.getElementById("row" + selectedContactId).classList.add("selected");
-}
-
 
 function searchContacts() {
     const content = document.getElementById("searchText");
