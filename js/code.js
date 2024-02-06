@@ -489,6 +489,42 @@ function deleteContact() {
     } catch (err) {
         console.log(err.message);
     }
+/* 
+    function deleteContact(contactId) {
+    readCookie();
 
+    document.getElementById("contactDeleteResult").innerHTML = "";
+
+    let url = urlBase + '/DeleteContact.' + extension;
+
+    // Construct the payload with the contactId to be deleted
+    let tmp = {
+        contactId: contactId,
+        userId: userId
+    };
+    let jsonPayload = JSON.stringify(tmp);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("DELETE", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
+                    loadContacts();
+                    showTable();
+                } else {
+                    document.getElementById("contactDeleteResult").innerHTML = "Error deleting contact";
+                }
+            }
+        };
+        xhr.send(jsonPayload);
+    } catch (err) {
+        document.getElementById("contactDeleteResult").innerHTML = err.message;
+    }
+}
+    */
 };
 
