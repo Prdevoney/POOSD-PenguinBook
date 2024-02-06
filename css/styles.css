@@ -180,6 +180,11 @@ select{
     position: absolute;
 }
 
+td {
+    padding: 0.5em; 
+    padding-right: 1em; 
+}
+
 .selected {
     background-color: #f0f0f0;
 }
