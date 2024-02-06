@@ -168,7 +168,7 @@ select{
 }
 
 .tables {
-    width: 50%;
+    width: 55%;
     left: 25%;
     top: 40%;
     z-index: 100;
@@ -176,6 +176,10 @@ select{
     font-size: 20pt;
     text-shadow: 1px 1px black;
     background: rgba(255, 255, 255, 0.5);
+    
+    margin-left: auto;
+    margin-right: auto;
+    
     
     position: absolute;
 }
