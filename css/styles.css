@@ -189,7 +189,7 @@ select{
 td {
     padding: 0.5em; 
     padding-right: 1em;
-    overflow-y: scroll; 
+     
 }
 
 .selected {
