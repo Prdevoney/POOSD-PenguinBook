@@ -247,7 +247,7 @@ function searchContact() {
 
     var jsonPayload = JSON.stringify({ userId: userId, search: srch });
 
-    var url = urlBase + '/SearchContacts.' + extension;
+    var url = urlBase + '/SearchContact.' + extension;
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
