@@ -179,6 +179,8 @@ select{
     
     margin-left: auto;
     margin-right: auto;
+
+
     
     
     position: absolute;
@@ -186,7 +188,8 @@ select{
 
 td {
     padding: 0.5em; 
-    padding-right: 1em; 
+    padding-right: 1em;
+    overflow-y: scroll; 
 }
 
 .selected {
