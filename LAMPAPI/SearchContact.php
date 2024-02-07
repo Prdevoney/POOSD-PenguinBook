@@ -34,11 +34,15 @@ if ($conn->connect_error) {
     $stmt->close();
     $conn->close();
 
+    $response = array();
+
     if (empty($contacts)) {
-        sendResultInfoAsJson(json_encode(["message" => "No contacts found."]));
+        $response["error"] = "No contacts found.";
     } else {
-        sendResultInfoAsJson(json_encode($contacts));
+        $response["results"] = $contacts;
     }
+
+    sendResultInfoAsJson(json_encode($response));
 }
 
 function getRequestInfo()
@@ -54,7 +58,7 @@ function sendResultInfoAsJson($obj)
 
 function returnWithError($err)
 {
-    $retValue = '{"error":"' . $err . '"}';
-    sendResultInfoAsJson($retValue);
+    $response = array("error" => $err);
+    sendResultInfoAsJson(json_encode($response));
 }
 ?>
