@@ -483,14 +483,14 @@ function deleteContact() {
 
     document.getElementById("row" + no + "").outerHTML = "";
     let tmp = {
+        userId: userId,
         firstName: nameOne,
-        lastName: nameTwo,
-        userId: userId
+        lastName: nameTwo
     }
 
     let jsonPayload = JSON.stringify(tmp);
 
-    let url = urlBase + '/DeleteContacts.' + extension;
+    let url = urlBase + '/DeleteContact.' + extension;
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
