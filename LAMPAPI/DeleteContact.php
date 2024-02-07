@@ -1,9 +1,9 @@
 <?php
 $inData = getRequestInfo();
 
-$userId = $inData["userId"];
 $firstName = $inData["firstName"];
 $lastName = $inData["lastName"];
+$userId = $inData["userId"];
 
 $conn = new mysqli("localhost", "TheBeast", "POOSD-2024-Spring", "COP4331");
 
