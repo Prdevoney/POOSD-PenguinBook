@@ -175,7 +175,7 @@ function loadContacts() {
                     ids[i] = jsonObject.results[i].userId
                     text += "<tr id='row" + i + "'>"
                     text += "<td id='firstName" + i + "'><span>" + jsonObject.results[i].firstName + "</span></td>";
-                    //text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
+                    text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + jsonObject.results[i].email + "</span></td>";
                     text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].phone + "</span></td>";
                     text += "<tr/>"
@@ -268,7 +268,7 @@ function searchContact() {
                 for (let i = 0; i < results.length; i++) {
 
                     text += "<tr id='row" + i + "'>"
-                    text += "<td> <input type='checkbox' aria-labelledBy="+ results[i].ID +"> </td>";
+                    text += "<td> <input type='checkbox' class='contact-checkbox' data-contact-id='" + results[i].ID + "'> </td>";
                     text += "<td id='first_Name" + i + "'><span>" + results[i].FirstName + "</span></td>";
                     text += "<td id='last_Name" + i + "'><span>" + results[i].LastName + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + results[i].EmailAddress + "</span></td>";
@@ -287,6 +287,20 @@ function searchContact() {
     catch (err) {
         document.getElementById("contactSearchResult").innerHTML = err.message;
     }
+    const checkboxes = document.querySelectorAll('.contact-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                selectedContactId = this.getAttribute('data-contact-id');
+                checkboxes.forEach(box => {
+                    if (box !== this) box.checked = false;
+                });
+            } else {
+                selectedContactId = null;
+            }
+            console.log('Selected Contact ID:', selectedContactId);
+        });
+    });
 }
 
 
