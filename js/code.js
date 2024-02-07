@@ -289,6 +289,8 @@ function searchContact() {
     }
     const checkboxes = document.querySelectorAll('.contact-checkbox');
     checkboxes.forEach(checkbox => {
+        console.log('Checkbox added:' );
+        console.log(this.getAttribute('data-contact-id'));
         checkbox.addEventListener('change', function() {
             if (this.checked) {
                 selectedContactId = this.getAttribute('data-contact-id');
