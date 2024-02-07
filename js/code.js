@@ -406,10 +406,10 @@ function delete_row(no) {
 }
 
 async function updateContact() {
-    let firstName = document.getElementbyId("firstName").value;
-    let lastName = document.getElementbyId("lastName").value;
-    let phone = document.getElementbyId("phone").value;
-    let email = document.getElementbyId("email").value;
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
 
     document.getElementById("editError").innerHTML = "";
 
