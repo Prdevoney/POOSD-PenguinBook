@@ -280,6 +280,23 @@ function searchContact() {
                 console.log(text);
 
                 document.getElementById("tbody").innerHTML = text;
+
+                const checkboxes = document.querySelectorAll('.contact-checkbox');
+                checkboxes.forEach(checkbox => {
+                console.log('Checkbox added:' );
+                console.log(this.getAttribute('data-contact-id'));
+                checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    selectedContactId = this.getAttribute('data-contact-id');
+                    checkboxes.forEach(box => {
+                    if (box !== this) box.checked = false;
+                });
+                } else {
+                    selectedContactId = null;
+                }
+                console.log('Selected Contact ID:', selectedContactId);
+            });
+    });
             }
         };
         xhr.send(jsonPayload);
@@ -287,22 +304,6 @@ function searchContact() {
     catch (err) {
         document.getElementById("contactSearchResult").innerHTML = err.message;
     }
-    const checkboxes = document.querySelectorAll('.contact-checkbox');
-    checkboxes.forEach(checkbox => {
-        console.log('Checkbox added:' );
-        console.log(this.getAttribute('data-contact-id'));
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
-                selectedContactId = this.getAttribute('data-contact-id');
-                checkboxes.forEach(box => {
-                    if (box !== this) box.checked = false;
-                });
-            } else {
-                selectedContactId = null;
-            }
-            console.log('Selected Contact ID:', selectedContactId);
-        });
-    });
 }
 
 
