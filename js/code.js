@@ -331,7 +331,7 @@ function edit_row(id) {
 }
 
 function save_row(no) {
-    readCookie();
+    //readCookie();
     var namef_val = document.getElementById("namef_text" + no).value;
     var namel_val = document.getElementById("namel_text" + no).value;
     var email_val = document.getElementById("email_text" + no).value;
@@ -343,8 +343,8 @@ function save_row(no) {
     document.getElementById("email" + no).innerHTML = email_val;
     document.getElementById("phone" + no).innerHTML = phone_val;
 
-    document.getElementById("edit_button" + no).style.display = "inline-block";
-    document.getElementById("save_button" + no).style.display = "none";
+    //document.getElementById("edit_button" + no).style.display = "inline-block";
+    //document.getElementById("save_button" + no).style.display = "none";
 
     let tmp = {
         phone: phone_val,
