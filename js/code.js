@@ -536,7 +536,7 @@ function doLoginAfterRegister(login, password) {
                 if (this.status == 200) {
                     document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
                     loadContacts();
-                    showTable();
+                    //showTable();
                 } else {
                     document.getElementById("contactDeleteResult").innerHTML = "Error deleting contact";
                 }
