@@ -16,26 +16,26 @@ if ($conn->connect_error) {
 
     // Check if any valid fields are provided for update
     if (isset($firstName) && !empty($firstName)) {
-        $sql = "UPDATE Contacts SET FirstName = '$firstName' WHERE ID = $contactId";
+        $sql = "UPDATE Contacts SET FirstName = '$firstName' WHERE UserID = $contactId";
         $conn->query($sql);
         $successFlag = true;
     }
 
     if (isset($lastName) && !empty($lastName)) {
-        $sql = "UPDATE Contacts SET LastName = '$lastName' WHERE ID = $contactId";
+        $sql = "UPDATE Contacts SET LastName = '$lastName' WHERE UserID = $contactId";
         $conn->query($sql);
         $successFlag = true;
     }
 
     if (isset($phone) && !empty($phone)) {
-        $sql = "UPDATE Contacts SET Phone = '$phone' WHERE ID = $contactId";
+        $sql = "UPDATE Contacts SET Phone = '$phone' WHERE UserID = $contactId";
         $conn->query($sql);
 
         $successFlag = true;
     }
 
     if (isset($email) && !empty($email)) {
-        $sql = "UPDATE Contacts SET Email = '$email' WHERE ID = $contactId";
+        $sql = "UPDATE Contacts SET Email = '$email' WHERE UserID = $contactId";
         $conn->query($sql);
 
         $successFlag = true;
