@@ -331,6 +331,7 @@ function edit_row(id) {
 }
 
 function save_row(no) {
+    readCookie();
     var namef_val = document.getElementById("namef_text" + no).value;
     var namel_val = document.getElementById("namel_text" + no).value;
     var email_val = document.getElementById("email_text" + no).value;
@@ -346,11 +347,11 @@ function save_row(no) {
     document.getElementById("save_button" + no).style.display = "none";
 
     let tmp = {
-        phoneNumber: phone_val,
-        emailAddress: email_val,
-        newFirstName: namef_val,
-        newLastName: namel_val,
-        id: id_val
+        phone: phone_val,
+        email: email_val,
+        firstName: namef_val,
+        lastName: namel_val,
+        contactId: id_val
     };
 
     let jsonPayload = JSON.stringify(tmp);
