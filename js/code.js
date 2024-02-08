@@ -471,7 +471,7 @@ function doLoginAfterRegister(login, password) {
     doLogin();
 }
 
-function deleteContact() {
+/*function deleteContact() {
     if (selectedContactId == null) {
         alert("Please select a contact to delete.");
         return;
@@ -506,11 +506,15 @@ function deleteContact() {
         xhr.send(jsonPayload);
     } catch (err) {
         console.log(err.message);
-    }
-/* 
-    function deleteContact(contactId) {
-    readCookie();
+    } */
 
+    function deleteContact() {
+    readCookie();
+    if (selectedContactId == null) {
+        alert("Please select a contact to delete.");
+        return;
+    }
+    let contactId = selectedContactId;
     document.getElementById("contactDeleteResult").innerHTML = "";
 
     let url = urlBase + '/DeleteContact.' + extension;
@@ -543,6 +547,6 @@ function deleteContact() {
         document.getElementById("contactDeleteResult").innerHTML = err.message;
     }
 }
-    */
-};
+
+//};
 
