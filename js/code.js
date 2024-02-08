@@ -172,8 +172,9 @@ function loadContacts() {
 
                 let text = "<table border='1'>"
                 for (let i = 0; i < jsonObject.results.length; i++) {
-                    ids[i] = jsonObject.results[i].userId
-                    console.log("setting ids[" + i + "] as " + jsonObject.results[i].userId);
+                    ids[i] = jsonObject.results[i].UserId
+                    console.log("setting ids[" + i + "] as " + jsonObject.results[i].UserId);
+                    console.log("ID" + jsonObject.results[i].ID);
                     text += "<tr id='row" + i + "'>"
                     text += "<td id='firstName" + i + "'><span>" + jsonObject.results[i].firstName + "</span></td>";
                     text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
@@ -282,7 +283,7 @@ function searchContact() {
                 }
                 text += "</table>"
 
-                console.log(text);
+                //console.log(text);
 
                 document.getElementById("tbody").innerHTML = text;
 
