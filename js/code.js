@@ -311,8 +311,8 @@ function searchContact() {
 
 
 function edit_row(id) {
-    document.getElementById("edit_button" + id).style.display = "none";
-    document.getElementById("save_button" + id).style.display = "inline-block";
+    //document.getElementById("edit_button" + id).style.display = "none";
+    //document.getElementById("save_button" + id).style.display = "inline-block";
 
     var firstNameI = document.getElementById("first_Name" + id);
     var lastNameI = document.getElementById("last_Name" + id);
