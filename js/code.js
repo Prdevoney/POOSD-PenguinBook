@@ -345,7 +345,9 @@ function save_row(no) {
 
     //document.getElementById("edit_button" + no).style.display = "inline-block";
     //document.getElementById("save_button" + no).style.display = "none";
-
+    let vals = [phone_val, email_val, namef_val, namel_val, id_val];
+    console.log(vals);
+    
     let tmp = {
         phone: phone_val,
         email: email_val,
