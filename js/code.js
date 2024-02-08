@@ -535,7 +535,7 @@ function doLoginAfterRegister(login, password) {
             if (this.readyState == 4) {
                 if (this.status == 200) {
                     document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
-                    loadContacts();
+                    //loadContacts();
                     //showTable();
                 } else {
                     document.getElementById("contactDeleteResult").innerHTML = "Error deleting contact";
@@ -543,6 +543,7 @@ function doLoginAfterRegister(login, password) {
             }
         };
         xhr.send(jsonPayload);
+        console.log("deletion successful?")
     } catch (err) {
         document.getElementById("contactDeleteResult").innerHTML = err.message;
     }
