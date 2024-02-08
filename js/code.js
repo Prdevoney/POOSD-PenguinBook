@@ -269,6 +269,7 @@ function searchContact() {
 
                     text += "<tr id='row" + i + "'>"
                     text += "<td> <input type='checkbox' class='contact-checkbox' data-contact-id='" + results[i].ID + "'> </td>";
+                    text += "<td>" + "<button type='button' onclick='delete_row(" + i + ")' class='w3-button w3-circle w3-amber'>" + "<span class='glyphicon glyphicon-trash'></span> " + "</button>" + "</td>";
                     text += "<td id='first_Name" + i + "'><span>" + results[i].FirstName + "</span></td>";
                     text += "<td id='last_Name" + i + "'><span>" + results[i].LastName + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + results[i].EmailAddress + "</span></td>";
@@ -385,7 +386,7 @@ function delete_row(no) {
 
         let jsonPayload = JSON.stringify(tmp);
 
-        let url = urlBase + '/DeleteContacts.' + extension;
+        let url = urlBase + '/DeleteContact.' + extension;
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
@@ -471,7 +472,7 @@ function doLoginAfterRegister(login, password) {
     doLogin();
 }
 
-/*function deleteContact() {
+function deleteContact() {
     if (selectedContactId == null) {
         alert("Please select a contact to delete.");
         return;
@@ -487,6 +488,8 @@ function doLoginAfterRegister(login, password) {
         firstName: nameOne,
         lastName: nameTwo
     }
+    console.log(nameOne);
+    console.log(userId);
 
     let jsonPayload = JSON.stringify(tmp);
 
@@ -506,9 +509,10 @@ function doLoginAfterRegister(login, password) {
         xhr.send(jsonPayload);
     } catch (err) {
         console.log(err.message);
-    } */
+    }
+}
 
-    function deleteContact() {
+    /*function deleteContact() {
     readCookie();
     if (selectedContactId == null) {
         alert("Please select a contact to delete.");
@@ -548,6 +552,6 @@ function doLoginAfterRegister(login, password) {
         document.getElementById("contactDeleteResult").innerHTML = err.message;
     }
 }
-
+*/
 //};
 
