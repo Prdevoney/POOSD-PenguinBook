@@ -173,6 +173,7 @@ function loadContacts() {
                 let text = "<table border='1'>"
                 for (let i = 0; i < jsonObject.results.length; i++) {
                     ids[i] = jsonObject.results[i].userId
+                    console.log("setting ids[" + i + "] as " + jsonObject.results[i].userId);
                     text += "<tr id='row" + i + "'>"
                     text += "<td id='firstName" + i + "'><span>" + jsonObject.results[i].firstName + "</span></td>";
                     text += "<td id='lastName" + i + "'><span>" + jsonObject.results[i].lastName + "</span></td>";
@@ -336,7 +337,7 @@ function save_row(no) {
     var namel_val = document.getElementById("namel_text" + no).value;
     var email_val = document.getElementById("email_text" + no).value;
     var phone_val = document.getElementById("phone_text" + no).value;
-    var id_val = ids[no]
+    var id_val = ids[no];
 
     document.getElementById("first_Name" + no).innerHTML = namef_val;
     document.getElementById("last_Name" + no).innerHTML = namel_val;
@@ -347,7 +348,7 @@ function save_row(no) {
     //document.getElementById("save_button" + no).style.display = "none";
     let vals = [phone_val, email_val, namef_val, namel_val, id_val];
     console.log(vals);
-    
+
     let tmp = {
         phone: phone_val,
         email: email_val,
