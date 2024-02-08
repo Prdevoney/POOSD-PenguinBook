@@ -1,7 +1,7 @@
 <?php
 $inData = getRequestInfo();
 
-$userId = $inData["userId"];
+$contactId = $inData["contactId"];
 $firstName = $inData["firstName"];
 $lastName = $inData["lastName"];
 $phone = $inData["phone"];
@@ -16,26 +16,26 @@ if ($conn->connect_error) {
 
     // Check if any valid fields are provided for update
     if (isset($firstName) && !empty($firstName)) {
-        $sql = "UPDATE Contacts SET FirstName = '$firstName' WHERE ID = $userId";
+        $sql = "UPDATE Contacts SET FirstName = '$firstName' WHERE ID = $contactId";
         $conn->query($sql);
         $successFlag = true;
     }
 
     if (isset($lastName) && !empty($lastName)) {
-        $sql = "UPDATE Contacts SET LastName = '$lastName' WHERE ID = $userId";
+        $sql = "UPDATE Contacts SET LastName = '$lastName' WHERE ID = $contactId";
         $conn->query($sql);
         $successFlag = true;
     }
 
     if (isset($phone) && !empty($phone)) {
-        $sql = "UPDATE Contacts SET Phone = '$phone' WHERE ID = $userId";
+        $sql = "UPDATE Contacts SET Phone = '$phone' WHERE ID = $contactId";
         $conn->query($sql);
 
         $successFlag = true;
     }
 
     if (isset($email) && !empty($email)) {
-        $sql = "UPDATE Contacts SET Email = '$email' WHERE ID = $userId";
+        $sql = "UPDATE Contacts SET Email = '$email' WHERE ID = $contactId";
         $conn->query($sql);
 
         $successFlag = true;
