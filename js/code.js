@@ -11,21 +11,14 @@ function doLogin() {
     firstName = "";
     lastName = "";
 
-    let login = document.getElementById("loginUsername").value;
+    let login = document.getElementById("loginName").value;
     let password = document.getElementById("loginPassword").value;
+    //var hash = md5(password);
 
-    var hash = md5(password);
-    /*if (!validLoginForm(login, password)) {
-        alert("Invalid username or password");
-        return;
-    }*/
-    //document.getElementById("loginResult").innerHTML = "";
+    document.getElementById("loginResult").innerHTML = "";
 
-    let tmp = {
-        login: login,
-        password: hash
-    };
-
+    let tmp = { login: login, password: password };
+    //	var tmp = {login:login,password:hash};
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/Login.' + extension;
@@ -36,7 +29,6 @@ function doLogin() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-
                 let jsonObject = JSON.parse(xhr.responseText);
                 userId = jsonObject.id;
 
@@ -44,16 +36,18 @@ function doLogin() {
                     document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
                     return;
                 }
+
                 firstName = jsonObject.firstName;
                 lastName = jsonObject.lastName;
 
                 saveCookie();
+
                 window.location.href = "contacts.html";
             }
         };
-
         xhr.send(jsonPayload);
-    } catch (err) {
+    }
+    catch (err) {
         document.getElementById("loginResult").innerHTML = err.message;
     }
 }
