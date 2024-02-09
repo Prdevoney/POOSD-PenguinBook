@@ -265,18 +265,19 @@ function searchContact() {
 
                 let text = '<table class="table table-hover">';
 
+
                 for (let i = 0; i < results.length; i++) {
                     text += "<tr id='row" + i + "'>";
-
+                   
                     text += "<td>" +
-                            "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-circle btn-sm' onclick='edit_row(" + i + ")'>" +
-                            "<i class='fas fa-edit'>Edit</i>" +
+                            "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-sm' onclick='edit_row(" + i + ")'>" +
+                            "Edit" +
                             "</button> " +
-                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-circle btn-sm' onclick='save_row(" + i + ")' style='display: none;'>" +
-                            "<i class='fas fa-save'></i>" +
+                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm' onclick='save_row(" + i + ")' style='display: none;'>" +
+                            "Save" +
                             "</button> " +
-                            "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-circle btn-sm'>" +
-                            "<i class='fas fa-trash-alt'></i>" +
+                            "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-sm'>" +
+                            "Delete" +
                             "</button>" +
                             "</td>";
                     text += "<td id='first_Name" + i + "'><span>" + results[i].FirstName + "</span></td>";
@@ -286,6 +287,7 @@ function searchContact() {
                     text += "</tr>";
                 }
                 text += "</table>";
+
 
 
                 document.getElementById("tbody").innerHTML = text;
