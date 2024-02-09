@@ -15,10 +15,10 @@ function doLogin() {
     let password = document.getElementById("loginPassword").value;
 
     var hash = md5(password);
-    if (!validLoginForm(login, password)) {
+    /*if (!validLoginForm(login, password)) {
         alert("Invalid username or password");
         return;
-    }
+    }*/
     //document.getElementById("loginResult").innerHTML = "";
 
     let tmp = {
