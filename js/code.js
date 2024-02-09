@@ -273,7 +273,7 @@ function searchContact() {
                             "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-sm' onclick='edit_row(" + i + ")'>" +
                             "Edit" +
                             "</button> " +
-                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm' onclick='save_row(" + i + ")' style='display: none;'>" +
+                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm' onclick='save_row(" + i + ")'>" +
                             "Save" +
                             "</button> " +
                             "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-sm'>" +
