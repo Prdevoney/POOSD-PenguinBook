@@ -22,7 +22,7 @@ function doLogin() {
     let jsonPayload = JSON.stringify(tmp);
 
     let url = urlBase + '/Login.' + extension;
-
+    console.log("stopping here")
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -41,7 +41,7 @@ function doLogin() {
                 lastName = jsonObject.lastName;
 
                 saveCookie();
-
+                console.log("stopping here")
                 window.location.href = "contacts.html";
             }
         };
@@ -50,6 +50,7 @@ function doLogin() {
     catch (err) {
         document.getElementById("loginResult").innerHTML = err.message;
     }
+    console.log("stopping here")
 }
 
 function doSignup() {
