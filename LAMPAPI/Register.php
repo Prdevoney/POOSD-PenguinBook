@@ -36,8 +36,10 @@ if ($checkLoginResult->num_rows > 0) {
 }
 
 // Password verification
-if (strlen($password) < 8 || strlen($password) > 20 || !preg_match('/[A-Za-z]/', $password) || !preg_match('/[0-9]/', $password)) {
-    die(json_encode(["error" => "Password must be between 8 and 20 characters long and include letters and numbers"]));
+if (strlen($password) < 8 || strlen($password) > 16 ||
+    !preg_match('/[A-Z]/', $password) || !preg_match('/[0-9]/', $password) ||
+    !preg_match('/[^a-zA-Z0-9]/', $password)) {
+    die(json_encode(["error" => "Password must be between 8 and 16 characters and contain at least one capital letter, one number, and one symbol"]));
 }
 
 // Insert user into the database with current timestamp
