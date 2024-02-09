@@ -45,19 +45,19 @@
                 <form id="signupForm">
                     <div class="mb-3">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" required>
+                        <input type="text" class="form-control" id="signFirst" required>
                     </div>
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" required>
+                        <input type="text" class="form-control" id="signLast" required>
                     </div>
                     <div class="mb-3">
                         <label for="signupUsername" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" required>
+                        <input type="text" class="form-control" id="signUserName" required>
                     </div>
                     <div class="mb-3">
                         <label for="signupPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <input type="password" class="form-control" id="signPassword" required>
                         <ul class="form-text">
                             <li>Must be 8-20 characters long.</li>
                             <li>Must include letters and numbers.</li>
@@ -67,7 +67,7 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" required>
                     </div>
-                    <button type="submit" class="btn btn-success" onclick="doSignup();">Sign Up</button>
+                    <button type="submit" class="btn btn-success" onclick="register();">Sign Up</button>
                 </form>
             </div>
         </div>
