@@ -263,26 +263,30 @@ function searchContact() {
                 console.log(results);
                 console.log("did my cats just ");
 
-                let text = "<table border='1'>";
+                let text = '<table class="table table-hover">';
 
-                //console.log(results.length)
                 for (let i = 0; i < results.length; i++) {
+                    text += "<tr id='row" + i + "'>";
 
-                    text += "<tr id='row" + i + "'>"
-                    text += "<td> <input type='checkbox' class='contact-checkbox' data-contact-id='" + results[i].ID + "'> </td>";
                     text += "<td>" +
-                        "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='edit_row(" + i + ")'>" + "<span class='glyphicon glyphicon-edit'></span>" + "</button>" +
-                        "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='save_row(" + i + ")'>" + "<span class='glyphicon glyphicon-saved'></span>" + "</button>" +
-                        "<button type='button' onclick='delete_row(" + i + ")' class='w3-button w3-circle w3-amber'>" + "<span class='glyphicon glyphicon-trash'></span> " + "</button>" + "</td>";
+                            "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-circle btn-sm' onclick='edit_row(" + i + ")'>" +
+                            "<i class='fas fa-edit'>Edit</i>" +
+                            "</button> " +
+                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-circle btn-sm' onclick='save_row(" + i + ")' style='display: none;'>" +
+                            "<i class='fas fa-save'></i>" +
+                            "</button> " +
+                            "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-circle btn-sm'>" +
+                            "<i class='fas fa-trash-alt'></i>" +
+                            "</button>" +
+                            "</td>";
                     text += "<td id='first_Name" + i + "'><span>" + results[i].FirstName + "</span></td>";
                     text += "<td id='last_Name" + i + "'><span>" + results[i].LastName + "</span></td>";
                     text += "<td id='email" + i + "'><span>" + results[i].EmailAddress + "</span></td>";
                     text += "<td id='phone" + i + "'><span>" + results[i].PhoneNumber + "</span></td>";
-                    text += "<tr/>"
+                    text += "</tr>";
                 }
-                text += "</table>"
+                text += "</table>";
 
-                //console.log(text);
 
                 document.getElementById("tbody").innerHTML = text;
 
