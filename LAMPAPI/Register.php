@@ -35,6 +35,11 @@ if ($checkLoginResult->num_rows > 0) {
     die(json_encode(["error" => "Login already exists"]));
 }
 
+// Password verification
+if (strlen($password) < 8 || strlen($password) > 20 || !preg_match('/[A-Za-z]/', $password) || !preg_match('/[0-9]/', $password)) {
+    die(json_encode(["error" => "Password must be between 8 and 20 characters long and include letters and numbers"]));
+}
+
 // Insert user into the database with current timestamp
 $sql = "INSERT INTO Users (DateCreated, DateLastLoggedIn, FirstName, LastName, Login, Password) VALUES (NOW(), NOW(), '$firstName', '$lastName', '$login', '$password')";
 
