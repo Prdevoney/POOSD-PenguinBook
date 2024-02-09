@@ -259,12 +259,9 @@ function searchContact() {
                 document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
                 var jsonObject = JSON.parse(xhr.responseText);
                 var results = jsonObject.results;
-                //var temp = jsonObject.results.length;
                 console.log(results);
-                console.log("did my cats just ");
 
                 let text = '<table class="table table-hover">';
-
 
                 for (let i = 0; i < results.length; i++) {
                     text += "<tr id='row" + i + "'>";
@@ -288,27 +285,10 @@ function searchContact() {
                 }
                 text += "</table>";
 
-
-
                 document.getElementById("tbody").innerHTML = text;
-
-                const checkboxes = document.querySelectorAll('.contact-checkbox');
-                checkboxes.forEach(checkbox => {
-                console.log('Checkbox added:' );
-                checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    selectedContactId = this.getAttribute('data-contact-id');
-                    checkboxes.forEach(box => {
-                    if (box !== this) box.checked = false;
-                });
-                } else {
-                    selectedContactId = null;
-                }
-                console.log('Selected Contact ID:', selectedContactId);
-            });
-    });
+              
             }
-        };
+        }
         xhr.send(jsonPayload);
     }
     catch (err) {
