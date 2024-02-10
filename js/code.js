@@ -322,6 +322,7 @@ function edit_row(id) {
 }
 
 function save_row(no) {
+    event.preventDefault();
     //readCookie();
     var namef_val = document.getElementById("namef_text" + no).value;
     var namel_val = document.getElementById("namel_text" + no).value;
@@ -406,6 +407,7 @@ function delete_row(no) {
 }
 
 async function updateContact() {
+    event.preventDefault();
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
     let phone = document.getElementById("phone").value;
