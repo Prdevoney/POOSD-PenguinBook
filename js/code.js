@@ -99,10 +99,10 @@ function doLogout() {
 function addContact() {
     readCookie();
 
-    let first = document.getElementById("firstName").value;
-    let last = document.getElementById("lastName").value;
-    let phone = document.getElementById("phoneNumber").value;
-    let email = document.getElementById("email").value;
+    let first = document.getElementById("contactTextFirst").value;
+    let last = document.getElementById("contactTextLast").value;
+    let phone = document.getElementById("contactTextNumber").value;
+    let email = document.getElementById("contactTextEmail").value;
 
     document.getElementById("contactAddResult").innerHTML = "";
 
