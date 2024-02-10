@@ -139,7 +139,7 @@ function addContact() {
 
 function showTable() {
     var x = document.getElementById("contactAddResult");
-    var contacts = document.getElementById("contactsTable")
+    var contacts = document.getElementById("contactTable")
     if (x.style.display === "none") {
         x.style.display = "block";
         contacts.style.display = "none";
