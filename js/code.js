@@ -243,8 +243,9 @@ function searchContacts() {
 
 function searchContact() {
     readCookie();
-
+    if (document.getElementById("searchText").value == "") return;
     let srch = document.getElementById("searchText").value;
+ 
     document.getElementById("contactSearchResult").innerHTML = "";
 
     var jsonPayload = JSON.stringify({ userId: userId, search: srch });
