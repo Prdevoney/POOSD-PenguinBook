@@ -261,6 +261,7 @@ function searchContact() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
                 var jsonObject = JSON.parse(xhr.responseText);
+                if (jsonObject.results == undefined) return;
                 var results = jsonObject.results;
                 console.log(results);
 
