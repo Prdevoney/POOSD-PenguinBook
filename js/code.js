@@ -8,6 +8,7 @@ const ids = []
 let selectedContactId = null;
 
 function doLogin() {
+    event.preventDefault();
     userId = 0;
     firstName = "";
     lastName = "";
