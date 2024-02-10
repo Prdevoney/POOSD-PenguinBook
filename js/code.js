@@ -97,6 +97,7 @@ function doLogout() {
 }
 
 function addContact() {
+    event.preventDefault();
     readCookie();
 
     let first = document.getElementById("contactTextFirst").value;
