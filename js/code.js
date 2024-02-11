@@ -125,7 +125,7 @@ function addContact() {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-                loadContacts();
+                //loadContacts();
                 showTable();
 
             }
@@ -290,7 +290,7 @@ function searchContact() {
                 text += "</table>";
 
                 document.getElementById("tbody").innerHTML = text;
-                loadContacts();
+                //loadContacts();
             }
         }
         xhr.send(jsonPayload);
@@ -360,7 +360,7 @@ function save_row(no) {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 console.log("Contact has been updated");
-                loadContacts();
+                //loadContacts();
             }
         };
         xhr.send(jsonPayload);
@@ -395,7 +395,7 @@ function delete_row(no) {
                 if (this.readyState == 4 && this.status == 200) {
 
                     console.log("Contact has been deleted");
-                    loadContacts();
+                    //loadContacts();
                 }
             };
             xhr.send(jsonPayload);
@@ -503,7 +503,7 @@ function deleteContact() {
             if (this.readyState == 4 && this.status == 200) {
 
                 console.log("Contact has been deleted");
-                loadContacts();
+                //loadContacts();
             }
         };
         xhr.send(jsonPayload);
@@ -539,7 +539,7 @@ function deleteContact() {
             if (this.readyState == 4) {
                 if (this.status == 200) {
                     document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
-                    //loadContacts();
+                    ////loadContacts();
                     //showTable();
                 } else {
                     document.getElementById("contactDeleteResult").innerHTML = "Error deleting contact";
