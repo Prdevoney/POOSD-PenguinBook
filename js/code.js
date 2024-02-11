@@ -290,7 +290,7 @@ function searchContact() {
                 text += "</table>";
 
                 document.getElementById("tbody").innerHTML = text;
-              
+                loadContacts();
             }
         }
         xhr.send(jsonPayload);
@@ -323,7 +323,7 @@ function edit_row(id) {
 
 function save_row(no) {
     event.preventDefault();
-    //readCookie();
+    readCookie();
     var namef_val = document.getElementById("namef_text" + no).value;
     var namel_val = document.getElementById("namel_text" + no).value;
     var email_val = document.getElementById("email_text" + no).value;
@@ -347,6 +347,7 @@ function save_row(no) {
         lastName: namel_val,
         contactId: id_val
     };
+
 
     let jsonPayload = JSON.stringify(tmp);
 
