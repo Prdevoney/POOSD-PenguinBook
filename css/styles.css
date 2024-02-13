@@ -15,14 +15,60 @@ body {
 
 .navbar-brand {
     font-size: 30px;
+    color: #000000;
+    
 }
 
 .nav-link {
     font-size: 30px;
-
+    
 }
 
 #contactsArea {
     height: 100vh;
     overflow-y: auto;
+}
+
+.btn-primary {
+    color: black; 
+}
+
+.navbar-nav .nav-link {
+    color: black; 
+}
+
+.btn-edit {
+    background-color: blue; 
+    color: black; 
+}
+
+/* delete button */
+.btn-delete {
+    background-color: rgb(146, 42, 42); 
+    color: black; 
+}
+
+/* color of the "Save" button */
+.btn-save {
+    background-color: blue; 
+    color: black; 
+}
+
+#searchText {
+    color: black; 
+}
+
+/* background color of the search placeholder*/
+#searchText::placeholder {
+    color: black; 
+}
+
+/* background color of the search box */
+#searchText {
+    background-color: rgb(208, 213, 226); 
+}
+
+/* search results background */
+#contactSearchResult {
+    background-color: rgba(208, 213, 226); 
 }
