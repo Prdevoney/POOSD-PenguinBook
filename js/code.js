@@ -106,6 +106,9 @@ function addContact() {
     let email = document.getElementById("contactTextEmail").value;
 
     //document.getElementById("contactAddResult").innerHTML = "";
+    var modalElement = document.getElementById('addContactModal');
+    var modalInstance = bootstrap.Modal.getInstance(modalElement);
+    modalInstance.hide();
 
     let tmp = {
         firstName: first,
