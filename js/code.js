@@ -494,7 +494,7 @@ function register() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                //doLoginAfterRegister(login, password);
+                doLoginAfterRegister(login, password);
             }
         };
         xhr.send(jsonPayload);
