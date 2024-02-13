@@ -443,6 +443,7 @@ async function updateContact() {
 }
 
 function register() {
+    event.preventDefault();
 
     let password = document.getElementById("signPassword").value;
     const confirmPassword = document.getElementById('confirmPassword').value;
