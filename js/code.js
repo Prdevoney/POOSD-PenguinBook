@@ -244,7 +244,11 @@ function searchContacts() {
 
 function searchContact() {
     readCookie();
-    if (document.getElementById("searchText").value == "") return;
+    if (document.getElementById("searchText").value == "") {
+        text = "";
+        document.getElementById("tbody").innerHTML = text;
+        return;
+    };
     let srch = document.getElementById("searchText").value;
  
     document.getElementById("contactSearchResult").innerHTML = "";
