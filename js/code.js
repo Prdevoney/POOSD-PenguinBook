@@ -252,7 +252,7 @@ function searchContact() {
     };
     let srch = document.getElementById("searchText").value;
  
-    document.getElementById("contactSearchResult").innerHTML = "";
+    //document.getElementById("contactSearchResult").innerHTML = "";
 
     var jsonPayload = JSON.stringify({ userId: userId, search: srch });
 
@@ -264,7 +264,7 @@ function searchContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+                //document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
                 var jsonObject = JSON.parse(xhr.responseText);
                 if (jsonObject.results == undefined) return;
                 var results = jsonObject.results;
@@ -302,7 +302,7 @@ function searchContact() {
         xhr.send(jsonPayload);
     }
     catch (err) {
-        document.getElementById("contactSearchResult").innerHTML = err.message;
+        //document.getElementById("contactSearchResult").innerHTML = err.message;
     }
 }
 
