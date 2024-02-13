@@ -105,7 +105,7 @@ function addContact() {
     let phone = document.getElementById("contactTextNumber").value;
     let email = document.getElementById("contactTextEmail").value;
 
-    document.getElementById("contactAddResult").innerHTML = "";
+    //document.getElementById("contactAddResult").innerHTML = "";
 
     let tmp = {
         firstName: first,
@@ -124,7 +124,7 @@ function addContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+                //document.getElementById("contactAddResult").innerHTML = "Contact has been added";
                 searchContact();
                 //loadContacts();
                 //showTable();
@@ -134,7 +134,7 @@ function addContact() {
         xhr.send(jsonPayload);
     }
     catch (err) {
-        document.getElementById("contactAddResult").innerHTML = err.message;
+        //document.getElementById("contactAddResult").innerHTML = err.message;
     }
 }
 
