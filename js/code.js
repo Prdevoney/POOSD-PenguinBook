@@ -443,8 +443,36 @@ async function updateContact() {
 }
 
 function register() {
-    let login = document.getElementById("signUserName").value;
+
     let password = document.getElementById("signPassword").value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    let errors = false;
+
+    if (password !== confirmPassword) {
+        document.getElementById('matchWarning').classList.add('text-danger');
+        errors = true;
+    }
+
+    if (password.length < 8 || password.length > 20) {
+        document.getElementById('lengthWarning').classList.add('text-danger');
+        errors = true;
+    } else {
+        document.getElementById('lengthWarning').classList.remove('text-danger');
+    }
+
+    const hasLettersAndNumbers = /[a-zA-Z]/.test(password) && /[0-9]/.test(password);
+    const hasSymbols = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (!hasLettersAndNumbers || !hasSymbols) {
+        document.getElementById('contentWarning').classList.add('text-danger');
+        errors = true;
+    } else {
+        document.getElementById('contentWarning').classList.remove('text-danger');
+    }
+    
+    if (errors) return;
+
+    let login = document.getElementById("signUserName").value;
     let firstName = document.getElementById("signFirst").value;
     let lastName = document.getElementById("signLast").value;
     //let email = document.getElementById("newEmail").value;

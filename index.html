@@ -63,8 +63,9 @@
                         <label for="signPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="signPassword" required>
                         <ul class="form-text">
-                            <li>Must be 8-20 characters long.</li>
-                            <li>Must include letters and numbers.</li>
+                            <li id="lengthWarning">Must be 8-20 characters long.</li>
+                            <li id="contentWarning">Must include letters and numbers and at least one symbol.</li>
+                            <li id="matchWarning">Passwords must match.</li>
                         </ul>
                     </div>
                     <div class="mb-3">
