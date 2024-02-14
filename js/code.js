@@ -7,6 +7,9 @@ let lastName = "";
 const ids = []
 let selectedContactId = null;
 
+var editMode = {};
+var originalValues = {};
+
 function doLogin() {
     event.preventDefault();
     userId = 0;
@@ -174,7 +177,7 @@ function searchContact() {
                             "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-sm contact-btn' onclick='edit_row(" + i + ")'>" +
                             "Edit" +
                             "</button> " +
-                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm contact-btn' onclick='save_row(" + i + ")'>" +
+                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm contact-btn' onclick='save_row(" + i + ")' disabled>" +
                             "Save" +
                             "</button> " +
                             "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-sm contact-btn'>" +
@@ -200,21 +203,38 @@ function searchContact() {
 }
 
 function edit_row(id) {
+    var saveBtn = document.getElementById("save_button" + id);
+    if (editMode[id]) {
+        document.getElementById("namef_text" + id).value = originalValues[id].namef;
+        document.getElementById("namel_text" + id).value = originalValues[id].namel;
+        document.getElementById("email_text" + id).value = originalValues[id].email;
+        document.getElementById("phone_text" + id).value = originalValues[id].phone;
+        
+        saveBtn.disabled = true;
+    } else {
+        originalValues[id] = {
+            namef: document.getElementById("namef_text" + id).value,
+            namel: document.getElementById("namel_text" + id).value,
+            email: document.getElementById("email_text" + id).value,
+            phone: document.getElementById("phone_text" + id).value
+        };
 
-    var firstNameI = document.getElementById("first_Name" + id);
-    var lastNameI = document.getElementById("last_Name" + id);
-    var email = document.getElementById("email" + id);
-    var phone = document.getElementById("phone" + id);
+        var firstNameI = document.getElementById("first_Name" + id);
+        var lastNameI = document.getElementById("last_Name" + id);
+        var email = document.getElementById("email" + id);
+        var phone = document.getElementById("phone" + id);
 
-    var namef_data = firstNameI.innerText;
-    var namel_data = lastNameI.innerText;
-    var email_data = email.innerText;
-    var phone_data = phone.innerText;
+        var namef_data = firstNameI.innerText;
+        var namel_data = lastNameI.innerText;
+        var email_data = email.innerText;
+        var phone_data = phone.innerText;
 
-    firstNameI.innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "'>";
-    lastNameI.innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
-    email.innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
-    phone.innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>"
+        firstNameI.innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "'>";
+        lastNameI.innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
+        email.innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
+        phone.innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>"
+    }
+    editMode[id] = !editMode[id];
 }
 
 function save_row(no) {
@@ -230,9 +250,6 @@ function save_row(no) {
     document.getElementById("last_Name" + no).innerHTML = namel_val;
     document.getElementById("email" + no).innerHTML = email_val;
     document.getElementById("phone" + no).innerHTML = phone_val;
-
-    let vals = [phone_val, email_val, namef_val, namel_val, id_val];
-    console.log(vals);
 
     let tmp = {
         phone: phone_val,
@@ -260,6 +277,10 @@ function save_row(no) {
     } catch (err) {
         console.log(err.message);
     }
+    
+    delete originalValues[no];
+    document.getElementById("save_button" + no).disabled = true;
+    editMode[no] = false;
 }
 
 function delete_row(no) {
