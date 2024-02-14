@@ -246,6 +246,7 @@ function save_row(no) {
     var email_val = document.getElementById("email_text" + no).value;
     var phone_val = document.getElementById("phone_text" + no).value;
     var id_val = ids[no];
+    var editBtn = document.getElementById("edit_button" + no);
 
     document.getElementById("first_Name" + no).innerHTML = namef_val;
     document.getElementById("last_Name" + no).innerHTML = namel_val;
@@ -281,6 +282,7 @@ function save_row(no) {
 
     delete originalValues[no];
     document.getElementById("save_button" + no).disabled = true;
+    editBtn.innerText = "Edit";
     editMode[no] = false;
 }
 
