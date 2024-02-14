@@ -43,21 +43,22 @@ body {
     color: black; 
 }
 
+/* edit button */
 .btn-edit {
     background-color: blue; 
-    color: black; 
+    color: white; 
 }
 
 /* delete button */
 .btn-delete {
     background-color: rgb(146, 42, 42); 
-    color: black; 
+    color: white; 
 }
 
 /* color of the "Save" button */
 .btn-save {
     background-color: blue; 
-    color: black; 
+    color: white; 
 }
 
 #searchText {
@@ -76,5 +77,5 @@ body {
 
 /* search results background */
 #contactSearchResult {
-    background-color: rgba(208, 213, 226); 
+    background-color: rgb(208, 213, 226); 
 }
