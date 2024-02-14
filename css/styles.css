@@ -10,6 +10,7 @@ body {
     background-position: center;
     min-height: 100vh;
 }
+
 .centered-content {
     text-align: center;
     position: absolute;

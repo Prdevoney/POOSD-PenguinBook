@@ -44,68 +44,68 @@
     <!-- Signup Modal -->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signFirst" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="signFirst" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signLast" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="signLast" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signUserName" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="signUserName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signPassword" required>
+                            <ul class="form-text">
+                                <li id="lengthWarning">Must be 8-20 characters long.</li>
+                                <li id="contentWarning">Must include letters and numbers and at least one symbol.</li>
+                                <li id="matchWarning">Passwords must match.</li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-success" onclick="register();">Sign Up</button>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-                <form id="signupForm">
-                    <div class="mb-3">
-                        <label for="signFirst" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="signFirst" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="signLast" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="signLast" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="signUserName" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="signUserName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="signPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="signPassword" required>
-                        <ul class="form-text">
-                            <li id="lengthWarning">Must be 8-20 characters long.</li>
-                            <li id="contentWarning">Must include letters and numbers and at least one symbol.</li>
-                            <li id="matchWarning">Passwords must match.</li>
-                        </ul>
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" required>
-                    </div>
-                    <button type="submit" class="btn btn-success" onclick="register();">Sign Up</button>
-                </form>
-            </div>
-        </div>
         </div>
     </div>
     
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Log In</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <form id="loginForm">
-                <div class="mb-3">
-                <label for="loginName" class="form-label">Username</label>
-                <input type="text" class="form-control" id="loginName" required>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginPassword" required>
+                <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginName" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="loginName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="doLogin();">Log In</button>
+                    <span id="loginResult"></span>
+                </form>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="doLogin();">Log In</button>
-                <span id="loginResult"></span>
-            </form>
             </div>
-        </div>
         </div>
     </div>
   
@@ -116,7 +116,5 @@
         <a href="#" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</a>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>-->
-</body>
+   </body>
 </html>
