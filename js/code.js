@@ -159,7 +159,7 @@ function searchContact() {
                 var results = jsonObject.results;
                 console.log(results);
 
-                let text = '<table class="table table-hover" border="1">';
+                let text = '<table class="table table-hover contact-table" border="1">';
 
                 text += "<tr id='row'>"
                 text += "<th></th>"

@@ -52,6 +52,11 @@ table td {
     padding: 4px;
 }
 
+.contact-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
 #searchText {
     color: black; 
 }
