@@ -227,10 +227,10 @@ function edit_row(id) {
         var email_data = originalValues[id].email;
         var phone_data = originalValues[id].phone;
 
-        document.getElementById("first_Name" + id).innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "'>";
-        document.getElementById("last_Name" + id).innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
-        document.getElementById("email" + id).innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
-        document.getElementById("phone" + id).innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>";
+        document.getElementById("first_Name" + id).innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "' style='width: 100%;'>";
+        document.getElementById("last_Name" + id).innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "' style='width: 100%;'>";
+        document.getElementById("email" + id).innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "' style='width: 100%;'>";
+        document.getElementById("phone" + id).innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "' style='width: 100%;'>";
         
         saveBtn.disabled = false;
         editBtn.innerText = "Undo";

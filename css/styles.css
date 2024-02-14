@@ -48,6 +48,10 @@ body {
     color: white; 
 }
 
+table td {
+    padding: 4px;
+}
+
 #searchText {
     color: black; 
 }
