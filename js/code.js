@@ -203,7 +203,9 @@ function searchContact() {
 }
 
 function edit_row(id) {
+    var editBtn = document.getElementById("edit_button" + id);
     var saveBtn = document.getElementById("save_button" + id);
+
     if (editMode[id]) {
         document.getElementById("first_Name" + id).innerHTML = "<span>" + originalValues[id].namef + "</span>";
         document.getElementById("last_Name" + id).innerHTML = "<span>" + originalValues[id].namel + "</span>";
@@ -211,6 +213,7 @@ function edit_row(id) {
         document.getElementById("phone" + id).innerHTML = "<span>" + originalValues[id].phone + "</span>";
         
         saveBtn.disabled = true;
+        editBtn.innerText = "Edit";
     } else {
         originalValues[id] = {
             namef: document.getElementById("first_Name" + id).innerText,
@@ -230,6 +233,7 @@ function edit_row(id) {
         document.getElementById("phone" + id).innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>";
         
         saveBtn.disabled = false;
+        editBtn.innerText = "Undo";
     }
     editMode[id] = !editMode[id];
 }
