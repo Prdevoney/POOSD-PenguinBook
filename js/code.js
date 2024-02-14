@@ -171,13 +171,13 @@ function searchContact() {
                     text += "<tr id='row" + i + "'>";
                    
                     text += "<td>" +
-                            "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-sm' onclick='edit_row(" + i + ")'>" +
+                            "<button type='button' id='edit_button" + i + "' class='btn btn-success btn-sm contact-btn' onclick='edit_row(" + i + ")'>" +
                             "Edit" +
                             "</button> " +
-                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm' onclick='save_row(" + i + ")'>" +
+                            "<button type='button' id='save_button" + i + "' class='btn btn-primary btn-sm contact-btn' onclick='save_row(" + i + ")'>" +
                             "Save" +
                             "</button> " +
-                            "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-sm'>" +
+                            "<button type='button' onclick='delete_row(" + i + ")' class='btn btn-danger btn-sm contact-btn'>" +
                             "Delete" +
                             "</button>" +
                             "</td>";
