@@ -264,6 +264,13 @@ function searchContact() {
                 console.log("did my cats just ");
 
                 let text = "<table border='1'>";
+                text += "<tr id='row'>"
+                text += "<th id='row"+ 0 +"'>"
+                text += "<th>First&nbsp;Name&nbsp;&nbsp;</th>"
+                text += "<th>Last&nbsp;Name&nbsp;&nbsp;</th>"
+                text += "<th>&nbsp;Email&nbsp;&nbsp;</th>"
+                text += "<th>&nbsp;Phone&nbsp;</th>"
+                text += "<tr/>"
 
                 //console.log(results.length)
                 for (let i = 0; i < results.length; i++) {
