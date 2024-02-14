@@ -205,34 +205,30 @@ function searchContact() {
 function edit_row(id) {
     var saveBtn = document.getElementById("save_button" + id);
     if (editMode[id]) {
-        document.getElementById("first_Name" + id).value = originalValues[id].namef;
-        document.getElementById("last_Name" + id).value = originalValues[id].namel;
-        document.getElementById("email" + id).value = originalValues[id].email;
-        document.getElementById("phone" + id).value = originalValues[id].phone;
+        document.getElementById("first_Name" + id).innerHTML = "<span>" + originalValues[id].namef + "</span>";
+        document.getElementById("last_Name" + id).innerHTML = "<span>" + originalValues[id].namel + "</span>";
+        document.getElementById("email" + id).innerHTML = "<span>" + originalValues[id].email + "</span>";
+        document.getElementById("phone" + id).innerHTML = "<span>" + originalValues[id].phone + "</span>";
         
         saveBtn.disabled = true;
     } else {
         originalValues[id] = {
-            namef: document.getElementById("first_Name" + id).value,
-            namel: document.getElementById("last_Name" + id).value,
-            email: document.getElementById("email" + id).value,
-            phone: document.getElementById("phone" + id).value
+            namef: document.getElementById("first_Name" + id).innerText,
+            namel: document.getElementById("last_Name" + id).innerText,
+            email: document.getElementById("email" + id).innerText,
+            phone: document.getElementById("phone" + id).innerText
         };
 
-        var firstNameI = document.getElementById("first_Name" + id);
-        var lastNameI = document.getElementById("last_Name" + id);
-        var email = document.getElementById("email" + id);
-        var phone = document.getElementById("phone" + id);
+        var namef_data = originalValues[id].namef;
+        var namel_data = originalValues[id].namel;
+        var email_data = originalValues[id].email;
+        var phone_data = originalValues[id].phone;
 
-        var namef_data = firstNameI.innerText;
-        var namel_data = lastNameI.innerText;
-        var email_data = email.innerText;
-        var phone_data = phone.innerText;
-
-        firstNameI.innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "'>";
-        lastNameI.innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
-        email.innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
-        phone.innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>"
+        document.getElementById("first_Name" + id).innerHTML = "<input type='text' id='namef_text" + id + "' value='" + namef_data + "'>";
+        document.getElementById("last_Name" + id).innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
+        document.getElementById("email" + id).innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
+        document.getElementById("phone" + id).innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>";
+        
         saveBtn.disabled = false;
     }
     editMode[id] = !editMode[id];
