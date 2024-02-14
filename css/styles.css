@@ -45,7 +45,7 @@ body {
 }
 
 /* edit button */
-.btn-edit {
+#edit_button {
     background-color: blue; 
     color: white; 
 }
@@ -57,7 +57,7 @@ body {
 }
 
 /* color of the "Save" button */
-.btn-save {
+#save_button {
     background-color: blue; 
     color: white; 
 }
