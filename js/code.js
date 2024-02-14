@@ -276,6 +276,14 @@ function searchContact() {
 
                 let text = '<table class="table table-hover">';
 
+                text += "<tr id='row'>"
+                text += "<th></th>"
+                text += "<th>First&nbsp;Name&nbsp;&nbsp;</th>"
+                text += "<th>Last&nbsp;Name&nbsp;&nbsp;</th>"
+                text += "<th>&nbsp;Email&nbsp;&nbsp;</th>"
+                text += "<th>&nbsp;Phone&nbsp;</th>"
+                text += "<tr/>"
+
                 for (let i = 0; i < results.length; i++) {
                     ids[i] = jsonObject.results[i].ID
                     text += "<tr id='row" + i + "'>";
