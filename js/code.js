@@ -233,6 +233,7 @@ function edit_row(id) {
         lastNameI.innerHTML = "<input type='text' id='namel_text" + id + "' value='" + namel_data + "'>";
         email.innerHTML = "<input type='text' id='email_text" + id + "' value='" + email_data + "'>";
         phone.innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>"
+        saveBtn.disabled = false;
     }
     editMode[id] = !editMode[id];
 }
