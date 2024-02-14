@@ -195,7 +195,7 @@
 
                         <div class="container d-flex">
                             <button type="button" class="btn btn-primary container form-label col-6 me-1" onclick="deleteContact();">Yes</button>
-                            <button type="button" class="btn btn-primary container form-label col-6">No</button>
+                            <button type="button" class="btn btn-primary container form-label col-6" data-bs-dismiss="modal">No</button>
                         </div>
 
                         <span id="contactUpdateResult"></span>
@@ -205,30 +205,23 @@
         </div>
         </div>
 
-
-        <div class="tables">
-            <div class="tbl-content" id="contactsTable">
-                <table id="contacts" cellpadding="0" cellspacing="0">
-
-                    <tr>
-                        <th><input type="checkbox" name="name1" />&nbsp;</th>
-                        <th>First&nbspName</th>
-                        <th>Last&nbspName</th>
-                        <th>email</th>
-                        <th>Phone</th>
-
-                    </tr>
-
-                    <tbody id="tbody"></tbody>
-                </table>
-            </div>
-        </div>
-
     
         <span id="contactSearchResult"></span>
-        <p id="ContactList">
-        </p><br /><br />
 
+		<div class="tables">
+                <table id="contacttable">
+						<tr>
+                            <th></th>
+							<th>First&nbsp;Name&nbsp;&nbsp;</th>
+							<th>Last&nbsp;Name&nbsp;&nbsp;</th>
+							<th>&nbsp;Email&nbsp;&nbsp;</th>
+							<th>&nbsp;Phone&nbsp;</th>
+						</tr>
+
+					<tbody id="tbody"></tbody>
+                    
+				</table>
+		</div>
         
         <footer class="bg-dark text-white mt-4 fixed-bottom">
             <div class="container text-center mt-1 mb-2">
