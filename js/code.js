@@ -263,7 +263,7 @@ function searchContact() {
                             var results = jsonObject.results;
                             //var temp = jsonObject.results.length;
                             console.log(results);
-                            console.log("did my cats just ");
+                            console.log("did my cats just");
 
                             for (const [key, val] of Object.entries(results))
                             {
