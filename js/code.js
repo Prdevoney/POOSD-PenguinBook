@@ -205,18 +205,18 @@ function searchContact() {
 function edit_row(id) {
     var saveBtn = document.getElementById("save_button" + id);
     if (editMode[id]) {
-        document.getElementById("namef_text" + id).value = originalValues[id].namef;
-        document.getElementById("namel_text" + id).value = originalValues[id].namel;
-        document.getElementById("email_text" + id).value = originalValues[id].email;
-        document.getElementById("phone_text" + id).value = originalValues[id].phone;
+        document.getElementById("first_Name" + id).value = originalValues[id].namef;
+        document.getElementById("last_Name" + id).value = originalValues[id].namel;
+        document.getElementById("email" + id).value = originalValues[id].email;
+        document.getElementById("phone" + id).value = originalValues[id].phone;
         
         saveBtn.disabled = true;
     } else {
         originalValues[id] = {
-            namef: document.getElementById("namef_text" + id).value,
-            namel: document.getElementById("namel_text" + id).value,
-            email: document.getElementById("email_text" + id).value,
-            phone: document.getElementById("phone_text" + id).value
+            namef: document.getElementById("first_Name" + id).value,
+            namel: document.getElementById("last_Name" + id).value,
+            email: document.getElementById("email" + id).value,
+            phone: document.getElementById("phone" + id).value
         };
 
         var firstNameI = document.getElementById("first_Name" + id);
@@ -277,7 +277,7 @@ function save_row(no) {
     } catch (err) {
         console.log(err.message);
     }
-    
+
     delete originalValues[no];
     document.getElementById("save_button" + no).disabled = true;
     editMode[no] = false;
