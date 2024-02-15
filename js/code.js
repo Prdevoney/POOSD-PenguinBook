@@ -86,6 +86,17 @@ function readCookie() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('openSignUpModal').addEventListener('click', function() {
+        var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+        if (loginModal) {
+            loginModal.hide();
+        }
+        var signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
+        signupModal.show();
+    });
+});
+
 function doLogout() {
     userId = 0;
     firstName = "";
