@@ -161,7 +161,6 @@ function searchContact() {
                     return;
                 }
                 var results = jsonObject.results;
-                console.log(results);
 
                 let text = '<table class="table table-hover contact-table" border="1">';
 
