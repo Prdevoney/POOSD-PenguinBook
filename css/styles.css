@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+    overflow-y: hidden;
 }
 
 .centered-content {
@@ -75,3 +76,4 @@ table td {
 #contactSearchResult {
     background-color: rgb(208, 213, 226); 
 }
+
