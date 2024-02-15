@@ -166,7 +166,19 @@ function searchContact() {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var jsonObject = JSON.parse(xhr.responseText);
-                if (jsonObject.results == undefined) return;
+                if (jsonObject.results == undefined) {
+                    let text = '<table class="table table-hover contact-table" border="1">';
+
+                    text += "<tr id='row'>"
+                    text += "<th></th>"
+                    text += "<th>First&nbsp;Name&nbsp;&nbsp;</th>"
+                    text += "<th>Last&nbsp;Name&nbsp;&nbsp;</th>"
+                    text += "<th>&nbsp;Email&nbsp;&nbsp;</th>"
+                    text += "<th>&nbsp;Phone&nbsp;</th>"
+                    text += "<tr/>"
+                    document.getElementById("tbody").innerHTML = text;
+                    return;
+                }
                 var results = jsonObject.results;
                 console.log(results);
 
