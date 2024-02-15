@@ -86,17 +86,6 @@ function readCookie() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('openSignUpModal').addEventListener('click', function() {
-        var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-        if (loginModal) {
-            loginModal.hide();
-        }
-        var signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
-        signupModal.show();
-    });
-});
-
 function doLogout() {
     userId = 0;
     firstName = "";
@@ -167,15 +156,7 @@ function searchContact() {
             if (this.readyState == 4 && this.status == 200) {
                 var jsonObject = JSON.parse(xhr.responseText);
                 if (jsonObject.results == undefined) {
-                    let text = '<table class="table table-hover contact-table" border="1">';
-
-                    text += "<tr id='row'>"
-                    text += "<th></th>"
-                    text += "<th>First&nbsp;Name&nbsp;&nbsp;</th>"
-                    text += "<th>Last&nbsp;Name&nbsp;&nbsp;</th>"
-                    text += "<th>&nbsp;Email&nbsp;&nbsp;</th>"
-                    text += "<th>&nbsp;Phone&nbsp;</th>"
-                    text += "<tr/>"
+                    let text = "";
                     document.getElementById("tbody").innerHTML = text;
                     return;
                 }
