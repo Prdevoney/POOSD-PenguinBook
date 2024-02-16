@@ -26,6 +26,9 @@
             const closeButton = document.querySelector('.btn-close');
             closeButton.addEventListener('click', function() {
                 console.log('Close button clicked!');
+                
+                var signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
+                var loginModal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
                 loginModal.hide();
                 signupModal.hide();
             });
